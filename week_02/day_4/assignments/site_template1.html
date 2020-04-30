@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Grid</title>
+    <style type="text/css">
+    #cont {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 400px 900px;
+  grid-template-rows: 60px 500px;
+  background: white;
+  padding: 20px;
+  text-align:center;
+  
+}
+
+#cont div:nth-child(1){
+  
+  font-size: 30px;
+  text-align: center;
+  background:red;
+}
+#cont div:nth-child(2){
+  
+  font-size: 30px;
+  text-align: center;
+  background: #00ff00;
+}
+#cont div:nth-child(3){
+  
+  font-size: 30px;
+  text-align: center;
+  background: teal;
+}
+#item1 {
+  grid-column-start:1;
+  grid-column-end:3;
+  
+  
+
+}
+
+#item2 {
+  grid-column-start:1;
+  grid-column-end:1;
+  grid-row-start:2;
+  grid-row-end:3;
+  
+}
+#item3 {
+  
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="cont">
+      <div id="item1"></div>
+      <div id="item2"></div>
+      <div id="item3"></div>
+     
+      
+    </div>
+  </body>
+</html>
