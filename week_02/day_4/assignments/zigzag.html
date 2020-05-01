@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <style type="text/css">
+        .flexbox1{
+            
+            margin:auto;
+            width:50%;
+            display: flex;
+
+        }
+        .flexbox1 div{
+            border: 1px solid black;
+            margin:10px;
+            padding:10px;
+            background: teal;
+            height:100px;
+        }
+        #box1 div{
+            flex-basis:100px;
+        }
+        #box1 div:nth-child(2){
+            flex-basis: 300px;
+        }
+        
+        .flexbox2{
+          
+            margin:auto;
+            width:50%;
+            display: flex;
+
+        }
+        .flexbox2 div{
+            border: 1px solid black;
+            margin:10px;
+            padding:10px;
+            background: teal;
+            height:100px;
+        }
+        #box2 div{
+            flex-basis:100px;
+        }
+        #box2 div:nth-child(1){
+            flex-basis: 300px;
+        }
+        .flexbox3{
+           
+            margin:auto;
+            width:50%;
+            display: flex;
+
+        }
+        #box2 div:nth-child(1){
+            flex-basis: 300px;
+        }
+        .flexbox3 div{
+            border: 1px solid black;
+            margin:10px;
+            padding:10px;
+            background: teal;
+            height:100px;
+        }
+        #box3 div{
+            flex-basis:100px;
+        }
+        #box3 div:nth-child(3){
+            flex-basis: 300px;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="flexbox1" id="box1">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="flexbox2" id="box2">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="flexbox3" id="box3">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+    
+</html>
