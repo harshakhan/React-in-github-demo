@@ -1,0 +1,155 @@
+<html>
+  <head>
+      <style type="text/css">
+      .class0{
+  border:3px solid black;
+  width:90%;
+  height:90%;
+  padding:10px;
+}
+#body{
+  border:2px solid black;
+  display:grid;
+  margin:10px;
+  grid-template-columns:auto;
+  grid-template-rows:auto;
+  grid-gap:20px;
+
+}
+#id1{
+  background:yellow;
+  height:100px;
+  width:1fr;
+  font-size:40px;
+  text-align:left;
+}
+#id2{
+  background:red;
+  width:1fr;
+  height:260px;
+  font-size:30px;
+  color:grey;
+}
+#id3{
+  background:#00ff00;
+  width:1fr;
+  height:1fr;
+  font-size:30px;
+  color:grey;
+}
+#id4{
+  background:#6495ed;
+  width:1fr;
+  height:1fr;
+  font-size:30px;
+  color:grey;
+}
+#id5 {
+  background:#c0c0c0;
+  width:1fr;
+  height:1fr;
+  font-size:30px;
+  color:grey
+}
+.clear{
+  clear:both;
+}
+#id1 {
+  grid-area: a;
+}
+
+#id2 {
+  grid-area: b;
+}
+
+#id3 {
+  grid-area: c;
+}
+#id4 {
+  grid-area: d;
+}
+#id5 {
+  grid-area: e;
+}
+#body{
+  grid-template:"a a a a"
+                "b c d e";
+}
+@media only screen and (max-width:992px) {
+  #body{
+    grid-template:"a a"
+                  "b d"
+                  "c e";
+    
+                  
+      
+  }
+  #id2{
+    height:200px;
+  }
+  #id3{
+    height:200px;
+  }
+   #id4{
+    height:200px;
+  }
+  #id5{
+    height:200px;
+  }
+  #id1{
+    height:80px;
+    width:1fr;
+  }
+}
+@media only screen and (max-width:600px) {
+  #body{
+    display:grid;
+    grid-template:"a a"
+                  "b b"
+                  "c c"
+                  "d d"
+                  "e e";  
+  /* grid-template:"a a"
+                  "b b"
+                  "c c"
+                  "d d"
+                  "e e";      */
+    grid-template-rows: auto;
+      
+  }
+
+  #id2{
+    width:80vw;
+  }
+   #id3{
+    width:80vw;
+  }
+   #id4{
+    width:80vw;
+  }
+   #id5{
+    width:80vw;
+  }
+   #id1{
+    height:90px;
+    width:1fr;
+  }
+}
+
+      
+    </style>
+    
+  </head>
+  <body>
+    <div class="class0">
+      <div id="body">
+        <div id="id1">Navigator</div>
+        <div id="id2">Box1</div>
+        <div id="id3">Box2</div>
+        <div id="id4">Box3</div>
+        <div id="id5">Box4</div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </body>
+</html>
