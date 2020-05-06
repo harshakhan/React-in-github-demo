@@ -1,9 +1,16 @@
 function program(input) {
-    // input
-    // write code here
-   
-    // return output
+    var output='0'
+    // console.log(output)
+    for(var i=1;i<=input;i++){
+        output+="\n"+i;
+        //console.log(output)
+    }
+    return(output)
+
 }
+   
+    
+
 
 
 module.exports = program
