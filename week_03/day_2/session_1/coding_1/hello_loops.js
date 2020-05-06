@@ -6,6 +6,7 @@ function program(input) {
     {
         if(i == 9){
             output = output + input
+            console.log(i)
         }
         else{
             output = output + input + '\n'
