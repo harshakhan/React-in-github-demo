@@ -1,6 +1,18 @@
 function program(input, n) {
     // input
-    // write code here
+    // var n=Number
+    var output=input
+    if (n==0){
+        return "";
+
+    }
+    else{
+        for(i=1; i<n; i++){
+            output+="\n"+input
+        }
+
+    }
+    return(output)
 
 }
 
