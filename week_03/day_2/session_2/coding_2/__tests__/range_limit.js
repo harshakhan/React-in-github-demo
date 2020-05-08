@@ -1,4 +1,5 @@
-const func = require('../print_limit.js')
+const func = require('../range_limit.js')
+
 
 test('test 1', () => {
     expect(func('9 12')).toBe('9\n10\n11')

@@ -1,4 +1,4 @@
-const func = require('../print_evens.js')
+const func = require('../return_evens.js')
 
 test('test 1', () => {
     expect(func(10)).toBe(
