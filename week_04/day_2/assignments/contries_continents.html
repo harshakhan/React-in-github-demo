@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Continent</title>
+    </head>
+
+<body>
+    <select id="country">
+        <option value="India">India</option>
+        <option value="United States of America">United States of America</option>
+        <option value="China">China</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Australia">Australia</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sweden">Sweden</option>
+    </select>
+    <button onclick="country()">Find Continent</button>
+    <script>
+        function country() {
+            var input = document.getElementById("country").value
+            alert("The continent is " + check(input))
+        }
+
+
+        function check(input) {
+            switch (input) {
+                case "India":
+                    return ("Asia")
+                case "United States of America":
+                    return ("North America")
+                case "China":
+                    return ("Asia")
+                case "Nepal":
+                    return ("Asia")
+                case "Australia":
+                    return ("Australia")
+                case "France":
+                    return ("Europe")
+                case "Germany":
+                    return ("Europe")
+                case "South Africa":
+                    return ("Africa")
+                case "Nigeria":
+                    return ("Africa")
+                case "Mexico":
+                    return ("North America")
+                case "Argentina":
+                    return ("South America")
+                case "Brazil":
+                    return ("South America")
+                case "Canada":
+                    return ("North America")
+                case "Singapore":
+                    return ("Asia")
+                case "Sweden":
+                    return ("Europe")
+            }
+            return 'output'
+        }
+
+
+    </script>
+</body>
+
+</html>
