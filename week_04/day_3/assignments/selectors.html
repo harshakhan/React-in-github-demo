@@ -1,45 +1,89 @@
 <html>
-    <head>
-        <title>Practise Selectors</title>
-    </head>
-    <body>
-        <h1>First H1</h1>
-        <h1>Second H1</h1>
-        <h3>First H3</h3>
-        <h3>Second H3</h3>
-        <h5>First H5</h5>
-        <h5>Second H5</h5>
-        <h5>Third H5</h5>
-        <div class="green">First DIV</div>
-        <div class="red">Second DIV</div>
-        <div class="blue">Third DIV</div>
-        <p class="green">First P</p>
-        <p class="red">Second P</p>
-        <p class="blue">Third P</p>
-        <hr/>
-        <button id="changeRed">Change H1</button>
-        <button id="changeGreen">Change H3</button>
-        <button id ="changeBlue">Change H5</button>
-        <button onclick="allGreen('class1')">Change Green</button>
-        <button>Change Red</button>
-        <button>Change Blue</button>
-        <script type = "text/javascript">
-        document.getElementById('changeRed').onclick = function(){
-            document.querySelector('body h1').style.color = 'red';
-        }
-        document.getElementById('changeGreen').onclick = function(){
-            document.querySelector('body h3').style.color = 'green';
-        }
-        document.getElementById('changeBlue').onclick = function(){
-            document.querySelector('body h5').style.color = 'blue';
-        }
-        function allGreen(name){
-            var divs = document.getElementsByClassName(name)
-            for(i=0;i<div.length;i++){
-                var div=divs[i];
-                div.style.color = 'green';
+
+<head>
+    <title>Practise Selectors</title>
+</head>
+
+<body>
+    <h1 class="h1">First H1</h1>
+    <h1 class="h1">Second H1</h1>
+    <h3 class="h3">First H3</h3>
+    <h3 class="h3">Second H3</h3>
+    <h5 class="h5">First H5</h5>
+    <h5 class="h5">Second H5</h5>
+    <h5 class="h5">Third H5</h5>
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+    <hr />
+    <button onclick="changeH1()">Change H1</button>
+    <button onclick="changeH3()">Change H3</button>
+    <button onclick="changeH5()">Change H5</button>
+    <button onclick="changeGreen()">Change Green</button>
+    <button onclick="changeRed()">Change Red</button>
+    <button onclick="changeBlue()">Change Blue</button>
+    <script type="text/javascript">
+
+        function changeH1() {
+            var elements = document.getElementsByClassName("h1")
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i]
+                element.style.color = "red"
             }
         }
-        </script>
-    </body>
+        function changeH3() {
+            var elements = document.getElementsByClassName("h3")
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i]
+                element.style.color = "green"
+            }
+
+        }
+        function changeH5() {
+            var elements = document.getElementsByClassName("h5")
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i]
+                element.style.color = "blue"
+            }
+        }
+        function changeGreen() {
+            var elements = document.getElementsByClassName("green")
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i]
+                element.style.color = "green"
+            }
+        }
+        function changeRed() {
+            var elements = document.getElementsByClassName("red")
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i]
+                element.style.color = "red"
+            }
+        }
+        function changeBlue() {
+            var elements = document.getElementsByClassName("blue")
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i]
+                element.style.color = "blue"
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
 </html>
