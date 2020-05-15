@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <select id="gender">
+            <option value="">--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <input id="DOB" type="number" placeholder="date of year">
+        <button onclick="result()">Check</button>
+
+        <script type="text/javascript">
+
+        function check(dob,gender){
+            if (gender == "male" && dob <= 1996){
+                return ("Valid legal age to get married")
+            }
+            else if (gender == "female" && dob <= 2001){
+                return ("Valid legal age to get married")
+            }
+            else if (gender == "" || dob == 0){
+                return ("Enter valid year and gender")
+            }
+            else{ 
+                return("Not valid legal age to get married")
+            }
+        }
+
+        function result(){ 
+            var dob = document.getElementById("DOB").value
+            var gender = document.getElementById("gender").value
+            alert(check(dob,gender))
+        }
+
+        </script>
+    </body>
+</html>
