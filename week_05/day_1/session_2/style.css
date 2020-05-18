@@ -1,0 +1,134 @@
+*{
+    margin :0;
+    padding: 0;
+    font-family: 'Patrick Hand', cursive;
+    /* background-color: hotpink; */
+}
+.head{
+    width:95%;
+    
+    margin: 10px auto;
+    color:grey;
+    display: grid;
+    grid-template-columns:auto;
+    grid-template-rows: auto;
+    grid-gap:10px;
+    background-position: center;
+    /* background-size: cover; */
+    background:#dcdcdc;
+    border-radius: 15px;
+    
+   
+    /* padding-left: 400px; */
+    
+    
+    
+
+}
+.div1{
+    background: #ffd700;
+    grid-area: 1/1;
+    height:50px;
+    border-radius: 15px;
+    
+    
+    
+    
+    
+    
+   
+    
+}
+.div2{
+    background: #4169e1;
+   
+    grid-area: 1/2;
+    border-radius: 15px;
+
+
+    
+}
+.div3{
+    background: #87cefa;
+   
+    grid-area:1/3
+    
+    
+    
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    grid-area:1/3
+}
+.box1{
+    width:90%;
+    height:350px;
+    
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+    margin-left: 30px;
+    
+}
+
+.box2{
+    border: 1px solid black;
+    grid-area: 1/2;
+    background: #dcdcdc;
+    
+}
+.box3{
+    border: 1px solid black;
+    grid-area: 1/3;
+    background-color: #dcdcdc;
+    
+}
+.box4{
+    border: 1px solid black;
+    grid-area: 1/4;
+    background: #dcdcdc;
+    
+}
+.small1{
+    border:1px solid black;
+    width:1fr;
+    height: 180px;
+    background: white;
+}
+p{
+    font-size: 40px;
+}
+h4{
+    color: black;
+
+}
+p1{
+    color:black;
+}
+.button{
+   
+    width:90%;
+    height:40px;
+    display:grid;
+}
+
+.b1{
+    
+    height:15px;
+   
+    grid-column: 1/1;
+}
+.b2{
+    border:1px solid black;
+    height:10px;
+   
+    grid-column: 1/2;
+}
+.b3{
+    border:1px solid black;
+    height:10px;
+   
+    grid-column: 1/3;
+}
