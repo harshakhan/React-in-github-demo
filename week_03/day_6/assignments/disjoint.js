@@ -27,7 +27,7 @@ function program(input) {
 
 // custom test case
 // program(<pass_test>)
-program('1 2 3 4' + '\n10 9 8 0')
+// program('1 2 3 4' + '\n10 9 8 0')
 
 module.exports = program
 
