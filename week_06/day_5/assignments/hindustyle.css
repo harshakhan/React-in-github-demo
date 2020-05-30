@@ -1,0 +1,477 @@
+.box {
+ 
+  display: grid;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .box {
+    grid-template-columns: auto;
+    grid-template-rows: 450px 150px 150px 150px 150px 150px;
+    background-color: lightgray;
+    word-break: break-words;
+  }
+  
+  .box > div {
+    /* border: 1px solid green; */
+  }
+  h6{
+    font-size: 13px;
+    color: darkblue;
+  }
+
+  #box5 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 2;
+  }
+  .box > div
+  {
+    margin: 10px;
+    background-color: white;
+  }
+
+  #box1 > div 
+  {
+    border: 1px solid blueviolet;
+    height: 50%;
+  }
+  .bigimage{
+    background-image: url("resources/woman-draped-in-a-flag-of-canada-2916826.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .bigcontaint{
+    background-color: darkblue;
+    color: white;
+    font-size: 10px;
+    padding-left: 15px;
+    /* line-height: 7px; */
+  }
+  .bigcontaint >h5
+  {
+    font-size: 19px;
+    line-height: 6px;
+  }
+
+  #box2
+  {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+   
+  
+  }
+
+  #box2 > .image
+  {
+
+    background-image: url(resources/architecture-art-berlin-building-532864.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box2 > .model2
+  {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+
+  #box3
+  {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+   
+  
+  }
+
+  #box3 > .image
+  {
+
+    background-image: url(resources/people-rallying-on-street-1464223.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box3 > .model2
+  {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+
+  #box4
+  {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+   
+  
+  }
+
+  #box4 > .image
+  {
+
+    background-image: url(resources/person-sitting-in-front-of-the-taj-mahal-2387871.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box4 > .model2
+  {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+
+  #box5
+  {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+   
+  
+  }
+
+  #box5 > .image
+  {
+
+    background-image: url(resources/low-angle-photography-of-high-rise-building-774282.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box5 > .model2
+  {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+
+
+  #box6
+  {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+   
+  
+  }
+
+  #box6 > .image
+  {
+
+    background-image: url(resources/photo-of-people-standing-in-front-of-ganesha-statue-1707402.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box6 > .model2
+  {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+  
+
+
+
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .box {
+    grid-template-columns: auto auto;
+    grid-template-rows: 500px 170px 170px;
+    line-height: 6px;
+   
+    background-color: lightgray;
+    word-break: break-all;
+  }
+  .box > div {
+    /* border: 1px solid red; */
+    word-wrap: normal;
+  }
+
+  #box5 {
+    display: none;
+  }
+
+  #box1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 3;
+  }
+
+  #box3 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-row-end: 4;
+    grid-column-end: 2;
+  }
+  .box > div{
+    margin: 10px;
+    background-color: white;
+  }
+  #box1 > div {
+    border: 1px solid blueviolet;
+    height: 50%;
+  }
+  .bigimage{
+    background-image: url("resources/woman-draped-in-a-flag-of-canada-2916826.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .bigcontaint{
+    background-color: darkblue;
+    color: white;
+    font-size: 15px;
+    padding-left: 15px;
+  }
+  h7{
+    display: none;
+  }
+
+  .bigcontaint >h5{
+    font-size: 22px;
+    /* line-height: 6px; */
+  }
+  #box2
+  {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+   
+  
+  }
+  #box2 > .image
+  {
+
+    background-image: url(resources/architecture-art-berlin-building-532864.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  #box2 > .model2
+  {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+  #box3
+  {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    /* border: 1px solid red; */
+  }
+  #box3 > .image{
+
+    background-image: url(resources/people-rallying-on-street-1464223.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  
+  #box3 > .model2
+  {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+  #box4
+  {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+   
+  
+  }
+  #box4 > .image
+  {
+
+    background-image: url(resources/person-sitting-in-front-of-the-taj-mahal-2387871.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  #box4 > .model2
+  {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+  #box6
+  {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+   
+  
+  }
+  #box6 > .image
+  {
+
+    background-image: url(resources/photo-of-people-standing-in-front-of-ganesha-statue-1707402.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  #box6 > .model2
+  {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .box {
+    grid-template-columns: auto auto;
+    grid-template-rows: 180px 180px 180px 180px;
+    margin: 30px;
+    background-color: lightgray;
+    word-break: break-all;
+  }
+  
+
+  #box1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 4;
+    grid-column-end: 2;
+    /* border:1px solid blue; */
+  
+  }
+  .box > div{
+    margin: 10px;
+    background-color: white;
+  }
+  
+  #box5 {
+    display: block;
+  }
+  
+  #box3 {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    grid-column-end: 3;
+  }
+  #box1 > div {
+    border: 1px solid blueviolet;
+    height: 50%;
+  }
+  .bigimage{
+    background-image: url("resources/woman-draped-in-a-flag-of-canada-2916826.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .bigcontaint{
+    background-color: darkblue;
+    color: white;
+    font-size: 15px;
+    
+  }
+  .bigcontaint >h5{
+    font-size: 24px;
+  }
+  #box2{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+   
+  
+  }
+  #box2 > div{
+    /* border: 1px solid black; */
+    word-break: break-all;
+    
+  }
+  #box2 > .image{
+
+    background-image: url(resources/architecture-art-berlin-building-532864.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  .model2 p{
+    font-size: 15px;
+    
+
+  }
+  .model2{
+    word-break: break-all;
+    line-height: 10px;
+  }
+  .model2 > h6{
+    font-size: 15px;
+    color: darkblue;
+    padding-left: 6px;
+   
+
+  }
+  #box3{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+  
+  }
+  #box3 > div{
+    /* border: 1px solid black; */
+  }
+  #box3 > .image{
+
+    background-image: url(resources/people-rallying-on-street-1464223.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box4{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+  
+  }
+  #box4 > div{
+    /* border: 1px solid black; */
+  }
+  #box4 > .image{
+
+    background-image: url(resources/person-sitting-in-front-of-the-taj-mahal-2387871.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box5{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+  
+  }
+  #box5 > div{
+    /* border: 1px solid black; */
+  }
+  #box5 > .image{
+
+    background-image: url(resources/low-angle-photography-of-high-rise-building-774282.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #box6{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+  
+  }
+  #box6 > div{
+    /* border: 1px solid black; */
+  }
+  #box6 > .image{
+
+    background-image: url(resources/photo-of-people-standing-in-front-of-ganesha-statue-1707402.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+
+
+} 
