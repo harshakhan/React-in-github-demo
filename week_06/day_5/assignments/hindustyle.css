@@ -2,6 +2,7 @@
  
   display: grid;
   font-family: 'Josefin Sans', sans-serif;
+  /* border:5px solid red; */
 }
 
 
@@ -11,7 +12,7 @@
 @media only screen and (max-width: 600px) {
   .box {
     grid-template-columns: auto;
-    grid-template-rows: 450px 150px 150px 150px 150px 150px;
+    grid-template-rows: 450px auto auto auto auto auto;
     background-color: lightgray;
     word-break: break-words;
   }
@@ -56,7 +57,7 @@
   .bigcontaint >h5
   {
     font-size: 19px;
-    line-height: 6px;
+    /* line-height: 6px; */
   }
 
   #box2
@@ -180,15 +181,15 @@
 @media only screen and (min-width: 600px) {
   .box {
     grid-template-columns: auto auto;
-    grid-template-rows: 500px 170px 170px;
-    line-height: 6px;
+    grid-template-rows: 500px auto auto;
+    /* line-height: 6px; */
    
     background-color: lightgray;
     word-break: break-all;
   }
   .box > div {
     /* border: 1px solid red; */
-    word-wrap: normal;
+    /* word-wrap: normal; */
   }
 
   #box5 {
@@ -329,10 +330,10 @@
 @media only screen and (min-width: 992px) {
   .box {
     grid-template-columns: auto auto;
-    grid-template-rows: 180px 180px 180px 180px;
-    margin: 30px;
+    grid-template-rows: auto auto auto auto;
+    margin: 30px;line-height: 6px;
     background-color: lightgray;
-    word-break: break-all;
+    /* word-break: break-all; */
   }
   
 
@@ -374,7 +375,8 @@
     font-size: 15px;
     
   }
-  .bigcontaint >h5{
+  .bigcontaint >h5{hmedabad joint rally with Trumph will
+    be historic,says Modi
     font-size: 24px;
   }
   #box2{
@@ -386,7 +388,7 @@
   }
   #box2 > div{
     /* border: 1px solid black; */
-    word-break: break-all;
+    /* word-break: break-all; */
     
   }
   #box2 > .image{
@@ -401,8 +403,8 @@
 
   }
   .model2{
-    word-break: break-all;
-    line-height: 10px;
+    /* word-break: break-all; */
+    /* line-height: 10px; */
   }
   .model2 > h6{
     font-size: 15px;
@@ -455,10 +457,7 @@
     background-image: url(resources/low-angle-photography-of-high-rise-building-774282.jpg);
     background-position: center;
     background-size: cover;
-  }
-  #box6{
-    display: grid;
-    grid-template-columns: 40% 60%;
+    line-height: 10px;
     grid-template-rows: 100%;
   
   }
