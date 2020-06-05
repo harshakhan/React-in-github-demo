@@ -29,6 +29,7 @@ var expense_manager={
     }
 
 };
+expense_manager.gender="male"
 expense_manager.addCredit(200000)
 expense_manager.addDebit(1000)
 expense_manager.addCredit(5000)
@@ -36,8 +37,8 @@ expense_manager.addDebit(7899)
 expense_manager.addCredit(500000)
 expense_manager.addDebit(25000)
 expense_manager.addCredit(900000)
-expense_manager.addDebit(87000)
-expense_manager.addCredit(500000)
+expense_manager.addDebit(700000)
+
 
 
 console.log(expense_manager.printBalance())
