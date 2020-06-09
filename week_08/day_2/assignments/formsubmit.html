@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id ="form">
+        <input type ="text" name ="username" placeholder ="username"/>
+        <!-- <input type ="text" name ="password" placeholder="password"/> -->
+        <input type ="submit" value="Submit"/>
+      </form>
+      
+      <div id="res">
+        
+      </div>
+
+
+      <script>
+          window.onload = function(){
+    
+    var form = document.querySelector("form")
+    form.addEventListener('submit',function(){
+        event.preventDefault( )
+        var elems=event.target;
+        
+        
+        var data ={ };
+        for(var i=0;i<elems.length;i++){
+        if(elems[i].name){
+            data[elems[i].name]= elems[i].value
+        }
+        }
+        addToResult(data)
+        
+        
+        
+    })
+    }
+
+    function addToResult(data){
+    var div =document.querySelector('#res');
+    
+    var p = document.createElement('p')
+   
+    p.textContent = "username:" + data.username
+    
+    
+    div.append(p)
+    div.append(p1)
+    
+}
+
+
+
+      </script>
+    
+</body>
+</html>

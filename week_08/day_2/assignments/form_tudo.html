@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id ="form">
+        <input type ="text" name ="task" placeholder ="title"/>
+        
+        <input type ="submit" value="Submit"/>
+        
+      </form>
+      
+      <div id="res">
+        
+      </div>
+
+      <script>
+
+
+
+var todo =[ ]; // global declaration  to store data.
+//task title
+//task status
+//id
+
+window.onload = function(){
+  
+  var form = document.querySelector("#form")
+  form.addEventListener('submit',function(){
+    event.preventDefault( )
+    var elems=event.target;
+    
+    
+    var data ={
+      title:elems[0].value, // we have event target as input box so elems[0].value to fetch the data.
+      status:false,
+      id:todo.length+1,   //calling global value and cont the no.of items
+    };
+    todo.push(data)
+    // console.log(todo)
+    
+    renderDOM()
+    
+    
+    
+  })
+}
+
+function renderDOM(data){
+  var div =document.querySelector('#res');
+  div.innerHTML=""
+  
+  
+  var cont = document.createElement('div');
+  
+  for(var i =0;i<todo.length;i++){
+    var p =document.createElement('p')
+    p.textContent = todo[i].title;
+    
+    
+    var checkbox = document.createElement('input')
+    checkbox.type ='checkbox'
+    checkbox.checked = todo[i].status
+    checkbox.name = todo[i].id //the value that are stored inside the name that is passed in var id
+    
+    
+    
+    checkbox.addEventListener('click',function(){  // adding the event listener to the check box.
+      // alert('pop')
+      var id =event.target.name
+     
+      handleCheckboxClick(id) //id will be printed here
+      
+      
+    })
+    
+    if(todo[i].status){   //condition to put the line-through function.
+    //   p.style.textDecoration="line-through"
+    //   p.style.color="green"
+    }
+    
+    
+    var item = document.createElement('div')
+    item.style.display = "flex"   // It's just the css function to get in a single line.
+    
+    item.append(p,checkbox)
+    cont.append(item)
+  }
+  
+  div.append(cont)
+  
+}
+
+
+function handleCheckboxClick(id){
+  // alert(id)
+  id = Number(id);
+  todo = todo.map(function(item){
+    //does the id, match the item in ypur todo
+    if(item.id ===id){
+      item.status = !item.status //then we will change the item
+      
+    }
+    return item
+  })
+  // console.log(todo)
+  renderDOM()
+  
+}
+
+
+
+
+      </script>
+    
+</body>
+</html>
