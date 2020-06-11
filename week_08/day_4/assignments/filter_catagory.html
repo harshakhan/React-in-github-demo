@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+
+    <style>
+        .row-item{
+             display : flex;
+        }
+        .row-item >*{
+            flex :1
+  
+        }
+        div >p{
+            border:1px solid#AA00FF;
+            text-align: center;
+            line-height: 30px;
+            color: #AA00FF;
+            
+            /* border-collapse: collapse; */
+        }
+       
+
+
+    </style>
+</head>
+<body>
+    <form>
+        Staff Information:
+        <div>
+            <input
+            type="text"
+            name="name"
+            class="input"
+            placeholder="name"/>
+        </div>
+
+
+        <div>
+            <input
+            type="number"
+            name="salary"
+            class="input"
+            placeholder="salary"/>
+        </div>
+
+        <div>
+            <select name="department" class="input">
+              <option value="hr">HR</option>
+              <option value="marketing">Marketing</option>
+              <option value="tech">Tech</option>
+              <option value="sales">Sales</option>
+            </select>
+        <div>
+
+        <div>
+            <select name="location" class="input">
+                <option value="banglore">banglore</option>
+                <option value="delhi">delhi</option>
+                <option value="chennai">chennai</option>
+                <option value="mumbai">mumbai</option>
+             </select>
+       
+            <div>
+                <input type ="submit" value ="ADD"/>
+            </div>
+        </div>
+
+
+    </form>
+
+    <div>
+        Filter: 
+        <select id="filter">
+          <option value="hr">HR</option>
+          <option value="marketing">Marketing</option>
+          <option value="tech">Tech</option>
+          <option value="sales">Sales</option>
+        </select>
+      </div>
+
+    <div id ="res">
+
+    </div>
+
+
+
+
+
+
+    <script src="filter.js"></script>
+</body>
+</html>

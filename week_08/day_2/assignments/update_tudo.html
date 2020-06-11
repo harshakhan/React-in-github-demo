@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update</title>
     <style>
       *{
         background-color: lightgray;
@@ -75,6 +75,20 @@ function renderDOM(data){      //its only purpose is to remove.
   for(var i =0;i<todo.length;i++){
     var p =document.createElement('p')
     p.textContent = todo[i].title;
+    p.setAttribute('class','para')
+
+
+    var btn =document.createElement('button')
+    btn.textContent="Delete"
+    btn.setAttribute('id','btn')
+    btn.addEventListener('click',remove)
+
+
+
+    var edit =document.createElement('button')
+    edit.textContent="Update"
+    edit.setAttribute('id','btn')
+    edit.addEventListener('click',update)
     
     
     var checkbox = document.createElement('input')
@@ -128,6 +142,50 @@ function handleCheckboxClick(id){
   
 }
 
+function remove(){
+    event.target.parentElement.remove()
+}
+
+
+function update(){
+    // console.log('update me')
+    var target = event.target
+    console.log(target)
+    var desc = event.target.previousElementSibling
+    //console.log(desc)
+
+
+    var input = document.createElement('input')
+    input.value =desc.textContent
+
+    desc.remove()
+
+    var parent = target.parentElement
+    target.textContent ="edit"
+    target.removeEventListener('click',update)
+    target.addEventListener('click',editItem)
+
+    parent.insertBefore(input,target)
+}
+
+function editItem(){
+    var target = event.target
+
+    var desc = event.target.previousElementSibling
+    // console.log(desc)
+
+    var p = document.createElement('p')
+    p.value = desc.textContent
+
+    desc.remove()
+
+    var parent = target.parentElement
+    target.textContent ="edit"
+    target.removeEventListener('click',editItem)
+    target.addEventListener('click',editItem)
+
+    parent.insertBefore(p,target)
+}
 
 
 
