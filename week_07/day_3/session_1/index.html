@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+    button {
+      background: teal;
+      color: white;
+    }
+    table {
+      margin-top: 10px;
+    }
+    table, td, th {
+      border: 1px solid teal;
+      border-collapse: collapse;
+    }
+    td, th {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    Name: <input type="text" id="name" >
+  </div>
+  <div>
+    Age: <input type="number" id="email">
+  </div>
+ <div>
+     <select id ="option">
+         <option value="male">male</option>
+         <option value="female">female</option>
+     </select>
+ </div>
+  <div>
+    <button id="button">Add a person</button>
+  </div>
+  <table id="table">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+    </tr>   
+  </table>
+  
+  <script src="script.js"></script>
+</body>
+</html>

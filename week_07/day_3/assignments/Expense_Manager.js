@@ -42,4 +42,4 @@ expense_manager.addDebit(700000)
 
 
 console.log(expense_manager.printBalance())
-console.log(expense_manager)
+// console.log(expense_manager)
