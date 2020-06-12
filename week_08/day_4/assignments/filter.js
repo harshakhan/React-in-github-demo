@@ -25,6 +25,12 @@ function getFormData(elems){
     for(var i=0;i<len;i++){
         var key = elems[i].name
         formData[key] = elems[i].value
+
+        if(elems[i].tagName==="INPUT"){  // this is to put the input box blank after every submission.
+            elems[i].value= ""
+
+        }
+      
     }
     return formData
 //    console.log(formData)
@@ -38,6 +44,10 @@ function renderDOM(arr){
     div.innerHTML=""
 
     var cont = document.createElement('div')
+
+
+    var firstRow = createRow({name:"NAME", salary:"SALARY", department:"DEPARTMENT", location:"LOCATION"})   // table header intilizing
+    cont.append(firstRow)
 
     var len = arr.length
     for(var i =0;i<len;i++){
