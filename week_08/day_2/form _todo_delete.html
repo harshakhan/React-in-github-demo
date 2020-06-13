@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <style>
+    #btn{
+        /* font-size: 10px; */
+    }
+    .para{
+        /* font-size: 25px; */
+    }
+    #container{
+        border: 1px solid black;
+        width:198px;
+    }
+</style>
+</head>
+
+<body>
+    <form id="form">
+        <input id="1" type="text" name="task" placeholder="task" />
+        <input id="3" type="submit" value="SUBMIT" />
+    </form>
+
+    <div id='res'>
+
+    </div>
+
+    <script type="text/javascript">
+        var todo = [];
+
+
+        window.onload = function () {
+
+            var form = document.querySelector("form")
+            form.addEventListener("submit", function () {
+                event.preventDefault()
+                var elems = event.target.children;
+                // console.log(elems)
+                var data = {
+                    status: false,
+                    title: elems[0].value,
+                    id: todo.length + 1
+                };
+
+                todo.push(data)
+                // console.log(data)
+                // console.log(todo)
+
+                renderDOM()
+            })
+
+        }
+
+        function renderDOM() {
+            var res = document.querySelector("#res")
+            res.innerHTML=" "  //it is important other wise you will get repitation of you item
+
+            var cont = document.createElement("div")
+           
+
+            for (var i = 0; i < todo.length; i++) {
+                var p = document.createElement("p")
+                p.textContent = todo[i].title
+                p.setAttribute("class","para")
+
+                var btn=document.createElement("button")
+                btn.textContent="Delete"
+                btn.setAttribute("id","btn")
+                btn.addEventListener("click",remove)
+
+                var edit=document.createElement("button")
+                edit.textContent="Update"
+                edit.setAttribute("id","btn")
+                edit.addEventListener("click",update)
+
+                var checkbox = document.createElement("input")
+                checkbox.type = "checkbox"
+                checkbox.checked = todo[i].status
+                checkbox.name=todo[i].id
+                // console.log(checkbox.name)
+
+                 checkbox.addEventListener("click",function(){
+                     var id=event.target.name
+                    //  console.log(id)
+                    handleCheckBoxClick(id)
+
+                 })
+
+
+                if (todo[i].status) {
+                    p.style.textDecoration = "line-through"
+                    p.style.color = "green"
+                }
+
+                var item = document.createElement("div")
+                item.style.display = "flex"
+                item.setAttribute("id","container")
+
+                item.append(checkbox,p,edit,btn)
+                cont.append(item)
+
+
+
+            }
+            res.append(cont)
+        }
+
+
+        function handleCheckBoxClick(id){
+            id=Number(id)
+            todo=todo.map(function(item){
+                if(item.id===id){
+                    item.status=!item.status
+                }
+                return item
+            })
+            renderDOM()
+        }
+
+        function remove(){
+        event.target.parentElement.remove()
+    }
+
+    function update(){
+        // console.log("update me")
+        var target=event.target
+        // console.log(item)
+        var desc=event.target.previousElementSibling
+        console.log(desc)
+
+        var input=document.createElement("input")
+        input.value=desc.textContent
+
+        desc.remove()
+
+        var parent=target.parentElement
+        target.textContent="edit"
+        target.removeEventListener("click",update)
+        target.addEventListener("click",editItem)
+
+        parent.insertBefore(input,target)
+    }
+
+    function editItem(){
+
+        var target=event.target
+        // console.log(item)
+        var desc=event.target.previousElementSibling
+        console.log(desc)
+
+        var p=document.createElement("p")
+        p.textContent=desc.value
+
+        desc.remove()
+
+        var parent=target.parentElement
+
+        target.textContent="Update"
+
+        target.removeEventListener("click",editItem)
+        target.addEventListener("click",update)
+
+        parent.insertBefore(p,target)
+
+    }
+
+
+    </script>
+</body>
+
+</html>
