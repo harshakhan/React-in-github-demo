@@ -1,6 +1,7 @@
 var button = document.getElementById('button');
 
 button.addEventListener('click', function () {
+  console.log('clicked')
   
   var name = document.getElementById('name').value;
  
@@ -68,6 +69,8 @@ button.addEventListener('click', function () {
   
   var table = document.getElementById('table');
   table.appendChild(tr);
+
+
   document.getElementById('name').value = '';
   document.getElementById('age').value = '';
   document.getElementById('science').value = '';
