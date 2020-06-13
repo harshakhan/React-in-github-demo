@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change-Color</title>
+    <style>
+        .newClass{
+            color:red;
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id ="text"> Javascript </h1>
+    <button onclick="toggleClass()">Click</button>
+    
+
+
+    <script>
+        window.onload = function(){
+            var text = document.getElementById('text');
+        }
+
+        function toggleClass(){
+
+            if(text.classList=='newClass'){
+                text.classList.remove('newClass')
+            }
+            else{
+                text.classList.add('newClass');
+            }
+        }
+    </script>
+</body>
+</html>

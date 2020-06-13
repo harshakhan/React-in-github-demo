@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden and Show</title>
+    <style>
+        .show{
+            display:block;
+        }
+        .hide{
+            /* color: green;
+            text-decoration: line-through; */
+            display: none;
+        }
+        .red{
+            color:red;
+        }
+        .green{
+            color:green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class ="red show">The text can be hidden</div>
+    <div class = "green show">The text text can be hidden</div>
+    <div class ="green">The text cannot be hidden</div>
+
+
+    <button id ="btn">HIDE</button>
+    
+
+
+
+
+    <script type ="text/javascript">
+
+    window.onload = function(){
+        var btn = document.getElementById('btn')
+        btn.addEventListener('click',handleHide)
+    }
+
+    function handleHide(){
+        var elems = document.querySelectorAll(".show")
+        console.log(elems)  //   <div class ="text show">The text can be hidden</div>
+                             // <div class = "text show">The text text can be hidden</div>
+        for(var i =0; i<elems.length;i++){
+
+            var cls = elems[i].getAttribute('class') //text show
+            cls = cls.split(' ').filter(function(item){   // ["text" ,"show"]
+                return item !== 'show'
+            })
+            cls.push('hide')  //text hide cls=["text","hide"]
+            elems[i].setAttribute('class', cls.join(' '))  //class="text hide"
+        }
+        event.target.textContent ="SHOW"
+        event.target.removeEventListener('click',handleHide)  //remove the function
+        event.target.addEventListener('click',handleShow)
+    }
+
+
+    function handleShow(){
+        var elems = document.querySelectorAll('.hide')
+        // console.log(elems)
+        var len = elems.length
+        for(var i =0;i<len;i++){
+            var cls = elems[i].getAttribute('class')
+              console.log(cls)
+            cls = cls.split(' ').filter(function(item){
+                return item !=='hide'
+            })
+            cls.push('show')
+            elems[i].setAttribute('class',cls.join(' '))
+        }
+        console.log(event.target)
+        event.target.textContent ="HIDE"
+        event.target.removeEventListener('click',handleShow)
+        event.target.addEventListener('click',handleHide)
+
+    }
+
+
+    </script>
+</body>
+</html>

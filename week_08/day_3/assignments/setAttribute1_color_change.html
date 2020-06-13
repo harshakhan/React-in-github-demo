@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color change</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .green{
+            color:green;
+        }
+        .blue{
+            color:blue;
+        }
+        
+
+
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="red">RED 1</div>
+    <p class="red">RED 2</p>
+    <p class="red">RED 3</p> 
+
+    <div class="green">GREEN 1</div>
+    <div class="green">GREEN 2</div>
+    <div class="green">GREEN 3</div>
+
+    
+    <div id="res">
+
+    </div>
+    
+
+
+
+
+    <script type ="text/javascript">
+
+    window.onload = function(){
+
+
+        event.preventDefault()
+        
+
+        var btn_green = document.createElement('button')
+        btn_green.textContent="Click To Change Green"
+        // btn_green.removeEventListener('click',changeDivToGreen)
+        btn_green.addEventListener('click',changeGreen)
+
+
+
+        var btn_div = document.createElement('button')
+        btn_div.textContent="Click To Change Div to Blue"
+        // btn_green.removeEventListener('click',changeGreen)
+        btn_div.addEventListener('click',changeDivToGreen )
+
+        res.append(btn_green,btn_div)
+
+    }
+
+
+    function changeGreen(){
+        var green = document.querySelectorAll('.red')
+
+
+        for(var i =0;i<green.length;i++){
+            green[i].setAttribute('class','green')
+        }
+        // console.log(event.target)
+        // event.target.textContent="Click To Change Green"
+        // event.target.removeEventListener('click',changeGreen)
+        
+        // event.target.addEventListener('click',changeDivToGreen)
+    }
+
+
+    function changeDivToGreen(){
+        var div = document.querySelectorAll('div')
+
+
+        for(var i = 0;i<div.length;i++){
+            div[i].setAttribute('class','blue')
+        }
+        // event.target.textContent="Change Into Blue"
+        // event.target.removeEventListener('click',changeDivToGreen)
+        // event.target.addEventListener('click',changeGreen)
+    }
+
+   
+
+    </script>
+</body>
+</html>

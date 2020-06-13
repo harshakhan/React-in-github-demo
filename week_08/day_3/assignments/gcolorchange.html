@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <style>
+        .red {
+            color: red
+        }
+
+        .green {
+            color: green
+        }
+        .blue{
+            color:blue
+        }
+    </style>
+
+<body>
+    <div class="red">RED 1</div>
+    <p class="red">RED 2</p>
+    <p class="red">RED 3</p>
+
+    <div class="green">GREEN 1</div>
+    <div class="green">GREEN 2</div>
+    <div class="green">GREEN 3</div>
+
+    <div id="res">
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            event.preventDefault()
+
+
+            var btn_green = document.createElement("button")
+            btn_green.textContent = "Click To Change Green"
+            btn_green.addEventListener("click", changeGreen)
+
+
+            var btn_div = document.createElement("button")
+            btn_div.textContent = "Click to change div to blue"
+            btn_div.addEventListener("click",changeDivToGreen)
+
+            res.append(btn_green,btn_div)
+
+        }
+
+        function changeGreen() {
+            var green = document.querySelectorAll(".red")
+
+            for (var i = 0; i < green.length; i++) {
+                green[i].setAttribute("class", "green")
+            }
+        }
+
+        function changeDivToGreen(){
+            var div=document.querySelectorAll("div")
+            // div.setAttribute("class", "blue")
+
+            for(var i=0;i<div.length;i++){
+                div[i].setAttribute("class","blue")
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
