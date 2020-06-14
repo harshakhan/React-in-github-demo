@@ -127,9 +127,10 @@ function renderDOM(data){      //its only purpose is to remove.
     
     
     
-    checkbox.addEventListener('click',function(){  // adding the event listener to the check box on clicking
+    checkbox.addEventListener('click',function(){  // adding the event listener to the check box on clicking.
       // alert('pop')
-      var id =event.target.name
+      var id =event.target.name 
+    //   console.log(id)
       
       
      
@@ -141,12 +142,12 @@ function renderDOM(data){      //its only purpose is to remove.
     if(todo[i].status){   //condition to put the line-through function.
       // p.style.textDecoration="line-through"
       // p.style.color="green"
-      var cls = p.getAttribute('class') // to add class sucess getAttributes comes
-      p.setAttribute('class',cls +" "+'success') //adding text and success class
+      var cls = p.getAttribute('class') // to add class sucess getAttributes comes.
+      p.setAttribute('class',cls +" "+'success') //adding text and success class.
     }
     
     
-    var btn = document.createElement('button')  // adding delete button
+    var btn = document.createElement('button')  // adding delete button.
     btn.textContent = "Delete"
     btn.addEventListener('click',handleDelete)
     
@@ -156,7 +157,7 @@ function renderDOM(data){      //its only purpose is to remove.
     item.setAttribute('class','item-row')
     item.setAttribute('id',todo[i].id)
     
-    item.append(p,checkbox,btn) // appending the p,checkbox and delete button
+    item.append(p,checkbox,btn) // appending the p,checkbox and delete button. 
     
     cont.append(item)
   }
@@ -165,7 +166,7 @@ function renderDOM(data){      //its only purpose is to remove.
   
 }
 
-function handleDelete(){    // fun to create delete using the condition
+function handleDelete(){    // fun to create delete using the condition.
   var id = Number(event.target.parentElement.id)
   // console.log(id)
   todo = todo.filter(function(item){

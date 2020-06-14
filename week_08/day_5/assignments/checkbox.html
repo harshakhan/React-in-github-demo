@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckBox</title>
+
+    <style>
+
+
+    .input-text{
+    padding:10px;
+    font-size :18px;
+    color:blue;
+    }
+
+    .btn {
+    padding:10px;
+    font-size :18px;
+    color: red;
+    
+    }
+    .item-row{
+    display: flex;
+    width:240px;
+    color:red;
+    align-items:center;
+    outline: 1px solid black;
+    padding :10px;
+    margin-top:10px;
+    
+    }
+
+    .item-row >*{
+    flex:1;
+    font-size :16px; 
+    }
+    .text{
+    font-size :28px;
+    }
+    .success{
+    color:green;
+    text-decoration: line-through;
+    
+    }
+    </style>
+</head>
+<body>
+
+    <form id ="form">
+        <input type ="text" class = "input-text" name ="task" placeholder ="title"/>
+        
+        <input type ="submit" class = "btn" value="Submit"/>
+    </form>
+    <div id ='res'>
+
+    </div>
+
+
+
+
+
+    <script>
+
+
+       //setAttribute("attribute-name", 'value')
+        // some browser may not have support attributes
+        // elem.attributes
+        // aria - label
+        //setAttribute("class",)
+
+
+
+            var todo =[ ]; // global declaration  to store data.
+            //task title
+            //task status
+            //id
+
+            window.onload = function(){
+            
+            var form = document.querySelector("#form")
+            form.addEventListener('submit',function(){
+                event.preventDefault( )
+                var elems=event.target.children;
+                // console.log(event.target)
+                
+                
+                var data ={
+                title:elems[0].value, // we have event target as input box so elems[0].value to fetch the data.
+                status:false,
+                id:todo.length+1,   //calling global value and cont the no.of items
+                };
+
+                elems[0].value ="" // reseting the input to blank
+                todo.push(data)
+                // console.log(todo)
+                
+                renderDOM()  //reusable of the function
+                
+                
+                
+            })
+            }
+
+            function renderDOM(data){      //its only purpose is to remove.
+            var div =document.querySelector('#res');
+            div.innerHTML=""  //it will just reset the input otherwise previous input will append
+            
+            
+            var cont = document.createElement('div'); // adding div inside the res
+            
+            
+            for(var i =0;i<todo.length;i++){
+                var p =document.createElement('p')
+                p.textContent = todo[i].title;
+                p.setAttribute("class","text")
+            
+                
+                
+                var checkbox = document.createElement('input')
+                checkbox.type ='checkbox'
+                checkbox.checked = todo[i].status
+                
+                // checkbox.name = todo[i].id //the value that are stored inside the name that is passed in var id
+                
+                checkbox.setAttribute('name',todo[i].id) // this is the alternative of the above line using setAttributes.
+            
+                
+                
+                
+                checkbox.addEventListener('click',function(){  // adding the event listener to the check box on clicking
+                // alert('pop')
+                var id =event.target.name
+                
+                
+                
+                handleCheckboxClick(id) //id will be printed here
+                
+                
+                })
+                
+                if(todo[i].status){   //condition to put the line-through function.
+                // p.style.textDecoration="line-through"
+                // p.style.color="green"
+                var cls = p.getAttribute('class') // to add class sucess getAttributes comes
+                p.setAttribute('class',cls +" "+'success') //adding text and success class
+                }
+                
+                
+                var btn = document.createElement('button')  // adding delete button
+                btn.textContent = "Delete"
+                btn.addEventListener('click',handleDelete)
+                
+                
+                
+                var item = document.createElement('div')
+                item.setAttribute('class','item-row')
+                item.setAttribute('id',todo[i].id)
+                
+                item.append(p,checkbox,btn) // appending the p,checkbox and delete button
+                
+                cont.append(item)
+            }
+            
+            div.append(cont)
+            
+            }
+
+            function handleDelete(){    // fun to create delete using the condition
+            var id = Number(event.target.parentElement.id)
+            // console.log(id)
+            todo = todo.filter(function(item){
+                if(item.id == id){
+                return false
+                }
+                return true
+            })
+            renderDOM()
+            }
+
+
+            function handleCheckboxClick(id){
+            // alert(id)
+            id = Number(id);
+            todo = todo.map(function(item){
+                //does the id, match the item in your todo
+                if(item.id ===id){
+                item.status = !item.status //then we will change the item
+                
+                }
+                return item
+            })
+            // console.log(todo)
+            renderDOM()
+            
+            }
+
+
+    </script>
+    
+</body>
+</html>
