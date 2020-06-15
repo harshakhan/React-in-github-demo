@@ -1,0 +1,143 @@
+*{
+    /* background-color: red; */
+   
+    margin:0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.header{
+    width: 95%;
+    margin: auto;
+    /* border:1px solid black; */
+    text-align: center;
+    line-height: 35px;
+    padding: 10px;
+}
+
+.upperBox{
+    /* border: 1px solid black; */
+    width: 95%;
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+.box1{
+    /* border:1px solid black; */
+    width: 28%;
+    padding: 10px;
+    height: 300px;
+    /* margin: auto; */
+}
+.box1>.image{
+    /* border:1px solid black; */
+    height: 80%;
+    background-image: url('img1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.box1 >.image2{
+    /* border:1px solid black; */
+    height: 80%;
+    background-image: url('img2.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+h6{
+    color: #FF9800;
+
+}
+p{
+    color: #757575;
+}
+.box1 >.image3{
+    /* border:1px solid black; */
+    height: 80%;
+    background-image: url('img3.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+.btnborder{
+    /* border: 1px solid red; */
+    width: 95%;
+    margin: auto;
+}
+.btn{
+    /* border:hidden; */
+    width:100px;
+    height: 40px;
+    padding-top: 11px;
+    float: left;
+    margin-left: 45%;
+    margin-top: 60px;
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-size: 15px;
+   
+   
+   
+}
+.header2{
+    border:1px solid;
+    margin-top: 120px;
+    text-align: center;
+    line-height: 30px;
+    /* align-items: center; */
+    
+}
+
+.down-border{
+    /* border: 1px solid black; */
+    width: 95%;
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    
+}
+.dbox1{
+    /* border:1px solid black; */
+    height: 40px;
+    width:28%;
+    displ
+}
+.logo{
+    border: 1px solid black;
+}
+/* .containt{
+    /* border: 1px solid black; */
+} */
+.text-div{
+    /* border: 1px solid black; */
+    height:400px;
+    width: 100%;
+    margin: 2px;
+    margin-left:120px;
+
+  }
+  .inner-text-div{
+    /* border: 1px solid black; */
+    height: 170px;
+    width:420px ;
+    float: left;
+    margin: 10px;
+
+  }
+  .icon-div{
+    /* border: 1px solid black; */
+    height: 100px;
+    width: 50px;
+    float: left;
+    margin: 10px;
+
+  }
+  img{
+      width: 45px;
+      height: 45px;
+
+  }
+
