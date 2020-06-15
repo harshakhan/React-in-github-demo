@@ -1,0 +1,583 @@
+.box {
+ 
+    display: grid;
+    font-family: 'Josefin Sans', sans-serif;
+    /* border:5px solid red; */
+  }
+ 
+
+  
+  
+  
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+
+
+    .header >h1{
+        color:black;
+        text-align: center;
+    }
+    .header > h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+    }
+
+    
+    .box {
+      grid-template-columns: auto;
+      grid-template-rows: 450px auto auto auto auto auto;
+      background-color: lightgray;
+      word-break: break-words;
+    }
+    
+    /* .box > div {
+      border: 1px solid green;
+    } */
+    h6{
+      font-size: 13px;
+      color: darkblue;
+    }
+   
+  
+    #box4 {
+      grid-row-start: 2;
+      grid-column-start: 1;
+      grid-row-end: 3;
+      grid-column-end: 2;
+    }
+    .box > div
+    {
+      margin: 10px;
+      background-color: white;
+    }
+  
+    #box1 > div 
+    {
+      border: 1px solid blueviolet;
+      height: 50%;
+    }
+    .bigimage{
+        background-image: url("image1.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+    .bigcontaint{
+      background-color: white;
+      color: black;
+      font-size: 10px;
+      padding-left: 15px;
+      /* line-height: 7px; */
+    }
+    .bigcontaint >h5
+    {
+      font-size: 19px;
+      /* line-height: 6px; */
+    }
+  
+    #box2
+    {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 100%;
+     
+    
+    }
+  
+    
+    #box2 > .model2
+    {
+      font-size: 11px;
+      margin-left: 10px;
+      width: 100%;
+    }
+  
+    #box3
+    {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 100%;
+     
+    
+    }
+  
+    
+    #box3 > .model2
+    {
+      font-size: 11px;
+      margin-left: 10px;
+    }
+  
+    #box5
+    {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 100%;
+     
+    
+    }
+  
+   
+    #box4 > .model2
+    {
+      font-size: 11px;
+      margin-left: 10px;
+    }
+  
+    #box5
+    {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 100%;
+     
+    
+    }
+  
+    
+    #box5 > .model2
+    {
+      font-size: 11px;
+      margin-left: 10px;
+    }
+  
+  
+    #box6
+    {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      grid-template-rows: 100%;
+     
+    
+    }
+  
+   
+    #box6 > .model2
+    {
+      font-size: 11px;
+      margin-left: 10px;
+    }
+
+    .model2 > h6{
+        font-size: 10px;
+        color: black;
+        padding-left: 6px;
+       
+    
+      }
+    .model2 >h8{
+          color:green;
+          font-size: 11px;
+          padding-left:8px;
+      }
+      .model3>h1{
+          text-align: center;
+          font-size:19px;
+      }
+
+      .model3{
+        text-align: center;
+        
+    }
+    .model3 >h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+    
+    }
+    .client{
+        display: grid;
+        /* border: 1px solid black; */
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 100%;
+        padding: 5px;
+        height: 60px;
+    }
+    /* .client div{
+        border: 1px solid black;
+    } */
+    .logo{
+        background-image: url('logo4.png');
+        background-position: center;
+        background-size: cover; 
+    }
+    
+    
+  
+  
+  
+  
+  } 
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+
+
+
+    .header >h1{
+        color:black;
+        text-align: center;
+    }
+    .header > h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+    }
+
+    .box {
+      grid-template-columns: auto auto;
+      grid-template-rows: 500px auto auto;
+      /* line-height: 6px; */
+     
+      background-color: lightgray;
+      word-break: break-all;
+    }
+    /* .box > div {
+      border: 1px solid red;
+      word-wrap: normal;
+    } */
+  
+    #box3 {
+      display: none;
+    }
+  
+    #box1 {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      grid-row-end: 2;
+      grid-column-end: 3;
+    }
+  
+    #box5{
+      grid-row-start: 3;
+      grid-column-start: 1;
+      grid-row-end: 4;
+      grid-column-end: 3;
+    }
+    .box > div{ 
+      margin: 10px;
+      background-color: white;
+    }
+    #box1 > div {
+      border: 1px solid blueviolet;
+      height: 50%;
+    }
+    .bigimage{
+        background-image: url("image1.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+  
+    .bigcontaint{
+      background-color: white;
+      color: black;
+      font-size: 15px;
+      
+    .client{
+        display: grid;
+        /* border: 1px solid black; */
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 100%;
+        padding: 5px;
+        height: 60px;
+    }
+    /* .client div{
+        border: 1px solid black;
+    } */
+    .logo{
+        background-image: url('logo4.png');
+        background-position: center;
+        background-size: cover; 
+    }
+      padding-left: 15px;
+    }
+    h7{
+      display: none;
+    }
+  
+    .bigcontaint >h5{
+      font-size: 22px;
+      /* line-height: 6px; */
+    }
+    #box2
+    {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 100%;
+     
+    
+    }
+   
+  
+    #box2 > .model2
+    {
+      font-size: 10px;
+      margin-left: 10px;
+    }
+    #box3
+    {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 100%;
+      /* border: 1px solid red; */
+    }
+   
+    
+    
+    #box3 > .model2
+    {
+      font-size: 10px;
+      margin-left: 10px;
+    }
+  
+    #box4
+    {
+      display: none;
+     
+    
+    }
+   
+  
+    #box4 > .model2
+    {
+      font-size: 10px;
+      margin-left: 10px;
+    }
+
+
+    .model3{
+        text-align: center;
+        
+    }
+    .model3 >h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+
+    }
+    .client{
+        display: grid;
+        /* border: 1px solid black; */
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 100%;
+        padding: 5px;
+        height: 60px;
+    }
+    /* .client div{
+        border: 1px solid black;
+    } */
+    .logo{
+        background-image: url('logo4.png');
+        background-position: center;
+        background-size: cover; 
+    }
+    .model2 > h6{
+        font-size: 10px;
+        color: black;
+        padding-left: 6px;
+       
+    
+      }
+      .model2 >h8{
+          color:green;
+          font-size: 11px;
+          padding-left:8px;
+      }
+
+      .model3 >h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+
+    }
+    
+    
+  
+  
+  
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+
+
+    .header >h1{
+        color:black;
+        text-align: center;
+    }
+    .header > h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+    }
+    .box {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto;
+      margin: 30px;line-height: 6px;
+      
+     
+    }
+    
+  
+    #box1 {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      grid-row-end: 4;
+      grid-column-end: 2;
+      border-radius: 5px;
+    
+    
+    
+    }
+    .box > div{
+      margin: 10px;
+      background-color: white;
+    }
+    
+    #box5 {
+      display: block;
+      grid-row-start: 4;
+      grid-column-start: 1;
+      grid-row-end: 5;
+      grid-column-end: 3;
+      border-radius: 5px;
+
+
+    }
+    
+    #box3 {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-row-end: 3;
+      grid-column-end: 3;
+      border-radius: 5px;
+    }
+    #box1 > div {
+      border: 1px solid blueviolet;
+      height: 50%;
+    }
+    .bigimage{
+      background-image: url("image1.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+    .bigcontaint{
+      background-color: white;
+      color: black;
+      font-size: 15px;
+      
+    }
+    .bigcontaint >h5{
+      font-size: 24px;
+    }
+    #box2{
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 140px;
+      /* border: 1px solid black; */
+      padding:5px;
+      border-radius: 5px;
+     
+    
+    }
+    #box2 > div{
+      /* border: 1px solid black; */
+      padding: 8px;
+      /* word-break: break-all; */
+     
+
+      
+    }
+    
+    .model2 p{
+      font-size: 15px;
+      
+  
+    }
+    .model2{
+      word-break: break-all; 
+      line-height: 5px; 
+    }
+    .model2 > h6{
+      font-size: 18px;
+      color: black;
+      padding-left: 6px;
+     
+  
+    }
+    .model2 >h8{
+        color:green;
+        font-size: 11px;
+        padding-left:8px;
+    }
+    #box3{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 140px;
+        /* border: 1px solid black; */
+        padding:5px;
+        
+    }
+   
+   
+    #box4{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 140px;
+        /* border: 1px solid black; */
+        padding:5px;
+        border-radius: 5px;
+    
+    }
+    
+   
+    #box5{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 140px;
+        /* border: 1px solid black; */
+        padding:5px;
+        border-radius: 5px;
+    }
+    
+    .model2 >h1{
+        text-align: center;
+    }
+    .model2>h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+    }
+    .model p {
+        text-align: start;
+
+    }
+    .model3{
+        text-align: center;
+        
+    }
+    .model3 >h2{
+        text-align: center;
+        font-size: 12px;
+        color: #757575;
+
+    }
+    .client{
+        display: grid;
+        
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 100%;
+        padding: 5px;
+        height: 60px;
+    }
+   
+    .logo{
+        background-image: url('logo4.png');
+        background-position: center;
+        background-size: cover; 
+    }
+   
+    
+  
+  
+  } 
