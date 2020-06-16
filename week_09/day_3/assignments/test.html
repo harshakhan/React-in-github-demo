@@ -1,0 +1,177 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" placeholder="company name" id="name">
+
+        <input type="number" placeholder="sales year 1" id="sales1">
+        <input type="number" placeholder="sales year 2" id="sales2">
+        <input type="number" placeholder="sales year 3" id="sales3">
+
+
+        <!-- <button id="submit">submit</button> -->
+
+        <select defaultValue="asc" id="sort">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+
+        <input type="submit">
+    </form>
+
+    <div id="res"></div>
+    <script type="text/javascript">
+
+        var arr = []
+
+        var order = "asc";
+
+        window.onload = function () {
+
+            var form = document.getElementById("form")
+            form.addEventListener("submit", handleForm)
+
+
+            var sort = document.getElementById("sort")
+            sort.addEventListener("change", handleSort)
+
+
+
+        }
+
+
+        function handleForm() {
+            event.preventDefault()
+            var elems = event.target.children;
+            var data = {
+                status: false,  //status
+                title: elems[0].value,
+                sales1: elems[1].value,
+                sales2: elems[2].value,
+                sales3: elems[3].value,
+                average: (Number(elems[1].value) + Number(elems[2].value) + Number(elems[3].value)) / 3,
+                id: arr.length + 1
+            };
+
+            elems[0].value = ""
+            elems[1].value = ""
+            elems[2].value = ""
+            elems[3].value = ""
+
+
+
+            arr.push(data)
+            // console.log(arr)
+            // console.log(arr.length)
+
+            renderDom(arr)
+        }
+
+
+        function renderDom(arr) {
+
+            var target = document.getElementById("res")
+            target.innerHTML = ""
+
+            createTable()
+            // var firstRow=createRow({name:NAME, salary:"SALARY", department:"DEPARTMENT", location:"LOCATION"})
+
+            // item.append(firstRow)
+
+            var len = arr.length
+            console.log(len)
+            for (var i = 0; i < arr.length; i++) {
+                createRow(arr[i])
+            }
+        }
+
+        function createTable() {
+
+            var target = document.getElementById("res")
+            var table = document.createElement("table")
+            table.setAttribute("id", "table")
+            table.style.padding = "20px";
+            table.style.margin = "2px";
+            table.style.color = "blue";
+            table.setAttribute("border", "3px")
+            var tr = document.createElement("tr")
+            var td1 = document.createElement("td")
+            td1.textContent = "name"
+            var td2 = document.createElement("td")
+            td2.textContent = "sales1"
+            var td3 = document.createElement("td")
+            td3.textContent = "sales2"
+            var td4 = document.createElement("td")
+            td4.textContent = "sales3"
+            var td5 = document.createElement("td")
+            td5.textContent = "average"
+            tr.append(td1, td2, td3, td4, td5)
+            table.append(tr)
+            target.append(table)
+        }
+
+
+        function createRow(data) {
+            var name = data.title
+            var sales1 = data.sales1
+            var sales2 = data.sales2
+            var sales3 = data.sales3
+            var average = data.average
+
+            var tr = document.createElement("tr")
+            var td1 = document.createElement("td")
+            td1.textContent = name
+            var td2 = document.createElement("td")
+            td2.textContent = sales1
+            var td3 = document.createElement("td")
+            td3.textContent = sales2
+            var td4 = document.createElement("td")
+            td4.textContent = sales3
+            var td5 = document.createElement("td")
+            td5.textContent = average
+
+
+
+            tr.append(td1, td2, td3, td4, td5)
+            table.append(tr)
+
+            var target = document.getElementById("table")
+            target.append(tr)
+
+        }
+
+        function handleSort() {
+            order = event.target.value;
+            console.log(order)
+
+            // 
+
+            
+            var sarr =  arr.sort(function (a, b) {
+                if (a.average < b.average) {
+                    return order === "desc" ? 1 : -1
+                }
+                if (a.average > b.average) {
+                    return order === "desc" ? -1 : 1
+                }
+                return 0
+            }) //   render
+            renderDom(sarr)
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
