@@ -108,12 +108,16 @@ function createRow(data) {
     var tr = document.createElement("tr")
     var td1 = document.createElement("td")
     td1.textContent = name
+
     var td2 = document.createElement("td")
     td2.textContent = sales1
+
     var td3 = document.createElement("td")
     td3.textContent = sales2
+
     var td4 = document.createElement("td")
     td4.textContent = sales3
+    
     var td5 = document.createElement("td")
     td5.textContent = avg
 

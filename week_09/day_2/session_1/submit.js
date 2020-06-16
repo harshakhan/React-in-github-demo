@@ -1,6 +1,6 @@
 window.onload = function () {
-    var botton = document.querySelector("#next")
-    botton.addEventListener("click", showEvent)
+    var button = document.querySelector("#next")
+    button.addEventListener("click", showEvent)
 }
 var data = []
 var numCount = 1
@@ -24,12 +24,11 @@ function showEvent() {
     }
 }
 
-
-
 function get(event) {
-    var x = event.target.id
-    for (var i = 0; i < data.length; i++) {
-        if (data[i] == x) {
+    var y = event.target.id
+    var len = data.length;
+    for (var i = 0; i < len; i++) {
+        if (data[i] == y) {
        
             alert(i + 1)
 
