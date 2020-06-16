@@ -1,0 +1,27 @@
+*{
+    margin: 10px auto;
+    padding: 0;
+    background-color: cornflowerblue;
+}
+
+#next{
+    background-color: #FF9100;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border: hidden;
+    padding: 15px;
+    margin-left: 40px;
+    border-radius: 5px;
+}
+.card {
+     color: black;
+    width: 120px;
+    height: 120px;
+    background-color:#FF8A65;
+    border:2px solid #DD2C00;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px;
+
+}
