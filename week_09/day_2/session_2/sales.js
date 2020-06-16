@@ -12,7 +12,6 @@ window.onload = function () {
     sort.addEventListener("change", createOrder)
 
 
-
 }
 
 
@@ -20,12 +19,12 @@ function createForm() {
     event.preventDefault()
     var input = event.target.children;
     var data = {
-        status: false,  //status
+        status: false, 
         title: input[0].value,
         sales1: input[1].value,
         sales2: input[2].value,
         sales3: input[3].value,
-        average: (Number(input[1].value) + Number(input[2].value) + Number(input[3].value)) / 3,
+        avg: (Number(input[1].value) + Number(input[2].value) + Number(input[3].value)) / 3,
         id: arr.length + 1
     };
 
@@ -49,10 +48,6 @@ function renderDom(arr) {
     target.innerHTML = ""
 
     createTable()
-    // var firstRow=createRow({name:NAME, salary:"SALARY", department:"DEPARTMENT", location:"LOCATION"})
-
-    // item.append(firstRow)
-
     var len = arr.length
     console.log(len)
     for (var i = 0; i < arr.length; i++) {
@@ -64,21 +59,16 @@ function renderDom(arr) {
 
 
 function createOrder() {
-    order = event.target.value;
-    // console.log(order)
-
-    // 
-
-    
+    order = event.target.value; 
     var subArray =  arr.sort(function (a, b) {
-        if (a.average < b.average) {
+        if (a.avg < b.avg) {
             return order === "desc" ? 1 : -1
         }
-        if (a.average > b.average) {
+        if (a.avg > b.avg) {
             return order === "desc" ? -1 : 1
         }
         return 0
-    }) //   render
+    }) 
     renderDom(subArray)
 }
 
@@ -95,11 +85,11 @@ function createTable() {
     var td1 = document.createElement("td")
     td1.textContent = "COMPANY NAME"
     var td2 = document.createElement("td")
-    td2.textContent = "SALES OF YEAR 1"
+    td2.textContent = "YEAR 1"
     var td3 = document.createElement("td")
-    td3.textContent = "SALES OF YEAR 2"
+    td3.textContent = "YEAR 2"
     var td4 = document.createElement("td")
-    td4.textContent = "SALES OF YEAR 3"
+    td4.textContent = "YEAR 3"
     var td5 = document.createElement("td")
     td5.textContent = "AVERAGE"
     tr.append(td1, td2, td3, td4, td5)
@@ -113,7 +103,7 @@ function createRow(data) {
     var sales1 = data.sales1
     var sales2 = data.sales2
     var sales3 = data.sales3
-    var average = data.average
+    var avg = data.avg
 
     var tr = document.createElement("tr")
     var td1 = document.createElement("td")
@@ -125,7 +115,7 @@ function createRow(data) {
     var td4 = document.createElement("td")
     td4.textContent = sales3
     var td5 = document.createElement("td")
-    td5.textContent = average
+    td5.textContent = avg
 
 
 
