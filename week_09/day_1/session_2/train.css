@@ -193,9 +193,7 @@
         padding: 5px;
         height: 60px;
     }
-    /* .client div{
-        border: 1px solid black;
-    } */
+   
     .logo{
         background-image: url('logo4.png');
         background-position: center;
@@ -269,6 +267,7 @@
       background-color: white;
       color: black;
       font-size: 15px;
+    }
       
     .client{
         display: grid;
@@ -286,8 +285,7 @@
         background-position: center;
         background-size: cover; 
     }
-      padding-left: 15px;
-    }
+    
     h7{
       display: none;
     }

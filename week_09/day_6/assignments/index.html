@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first</title>
+    <style>
+         #login_form
+            {
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div id="login_form">            
+        <form>
+        <input type="text" name="user_name" id="user_name" placeholder="Enter Username" required>                
+        <input type="password" name="user_p_word" id="user_p_word" placeholder="Enter Password" required>                
+        <select id="user_or_admin">                    
+            <option value="user">user</option>                    
+            <option value="admin">admin</option>
+        </select>                
+        <button id="submit_btn">Submit</button>
+    </form>        
+   </div>
+
+
+   <script type="text/javascript">
+
+
+window.onload=function(){
+    var btn = document.getElementById("submit_btn")
+    btn.addEventListener("click",submit_login)
+}
+
+var arr_name_and_passwords=[                
+    {name: "Harry", password: "HarryPotter456"},                
+    {name: "Albus", password: "Magic456"},                
+    {name: "Snape", password: "Lilly789"},                
+    {name: "Tom", password: "DarkLord456"}            ]            
+    var arr_len= arr_name_and_passwords.length            
+    var registered_users= JSON.stringify(arr_name_and_passwords)            
+    localStorage.setItem("names",registered_users) 
+    
+    
+
+    function submit_login()
+            {
+                var get_name= document.getElementById("user_name").value                
+                var get_password= document.getElementById("user_password").value                
+                var get_user_or_admin= document.getElementById("user_or_admin").value                
+                for(var i=0; i<arr_len; i++)
+                {
+                    if(get_name===arr_name_and_passwords[i].name && get_password===arr_name_and_passwords[i].password && get_user_or_admin==="user")
+                    {
+                        window.location.href= "dash.html"                    }
+                    else
+                    {
+                        alert("User-name and Password don't match")
+                    }
+                }            
+            }
+
+
+  </script>
+    
+</body>
+</html>

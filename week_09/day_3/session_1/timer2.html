@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Session</title>
+</head>
+<body>
+    <div id="timer"></div>
+    
+
+
+
+
+
+
+    <script type="text/javascript">
+    var counter =10
+    window.onload = function(){
+        var timer = document.getElementById("timer")
+        
+
+
+        var id = setInterval( function(){    // this will give time interval after every one secound
+            var date = new Date()
+            timer.innerHTML = date.toLocaleTimeString()
+            counter--
+            if(counter===0){
+                alert("logout")
+                clearInterval(id)
+                location.href="login.html"
+            }
+
+        },1000 )
+       
+    }
+    
+    
+    </script>
+   
+</body>
+</html>
