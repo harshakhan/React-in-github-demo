@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch in js</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class= "controls">
+        <button onclick="start()">Start</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="restart()">Restart</button>
+       
+    </div>
+    <div class="stopwatch">00:00:00</div>
+    <ul class="laps"></ul>
+
+    <script>
+
+        var ms = 0, s=0, m=0;
+        var timer;
+
+        var stopwatchEl = document.querySelector('.stopwatch');
+        var lapsContainer = document.querySelector('.laps');
+
+
+        function start(){
+
+            if(!timer){
+                timer = setInterval(run,10);
+
+            }
+           
+        }
+
+        function run(){
+            stopwatchEl.textContent =getTimer();
+            ms++;
+            if(ms==100){
+                ms=0;
+                s++;
+            }
+            if(s==60){
+                s =0
+                m++;
+            }
+
+        }
+        function pause(){
+            stopTimer();
+           
+        }
+        function stop(){
+           stopTimer();
+            ms=0,s=0,m=0;
+
+
+
+        }
+
+        function stopTimer(){
+            clearInterval(timer)
+            timer = false;
+            stopwatchEl.textContent = getTimer()
+
+
+        }
+
+        function getTimer(){
+          return ( m<10 ? "0" + m:m) + ":" + (s <10 ? "0" + s:s) + ":" + (ms<10 ? "0" + ms:ms);
+
+        }
+        function restart(){
+            stop();
+            start();
+        }
+       
+
+
+
+
+    </script>
+    
+</body>
+</html>
