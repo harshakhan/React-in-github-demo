@@ -36,7 +36,7 @@ function renderDOM(data){
 
     for( var i=0;i<data.length ; i++){
         var li = document.createElement('li')
-        li.textContent ="name:"+ data[i].name + " role:"+data[i].role + " password" +data[i].password
+        li.textContent ="name:"+ data[i].name + " role:"+data[i].role + " pass:" +data[i].password
         ul.append(li)
     }
 }
