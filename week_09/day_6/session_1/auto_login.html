@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Login</title>
+</head>
+<body>
+    <div id ="timer">
+        <input placeholder="username"/>
+        <input placeholder="password"/>
+        <button id ="btn">Login</button>
+    </div>
+
+
+
+    <script type = "text/javascript">
+
+    var counter =10
+    window.onload= function(){
+        var timer = document.getElementById('timer')
+
+
+        var id = setInterval(function(){
+            var data = new Date()
+            // timer.innerHTML=data.toLocaleDateString()
+            counter--
+            if(counter===0){
+                alert("Opps! Please Login again")
+                location.href = "loginAgain.html"
+            }
+        },1000)
+    }
+
+    </script>
+    
+</body>
+</html>
