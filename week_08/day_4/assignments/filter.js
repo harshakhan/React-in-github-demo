@@ -46,7 +46,7 @@ function renderDOM(arr){
     var cont = document.createElement('div')
 
 
-    var firstRow = createRow({name:"NAME", salary:"SALARY", department:"DEPARTMENT", location:"LOCATION"})   // table header intilizing
+    var firstRow = createRow({name:"COMPANY", salary:"YEAR-1", department:"YEAR-2", location:"YEAR-3"})   // table header intilizing
     cont.append(firstRow)
 
     var len = arr.length
@@ -92,12 +92,12 @@ function createRow(data){
 }
 
 
-function handleFilter(){
-    var department = event.target.value
+// function handleFilter(){
+//     var department = event.target.value
 
-    console.log(department)
-    var newArr = arr.filter(function(item){
-        return item.department === department
-    })
-    renderDOM(newArr)
-}
+//     console.log(department)
+//     var newArr = arr.filter(function(item){
+//         return item.department === department
+//     })
+//     renderDOM(newArr)
+// }
