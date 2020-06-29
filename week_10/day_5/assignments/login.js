@@ -7,7 +7,7 @@ function loginUser(payload){
     var xhr = new XMLHttpRequest()
     xhr.open("POST","http://localhost:8080/auth/login")
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8")
-    xhr.send(JSON.stringify(payload))
+    xhr.send(JSON.stringify(payload) )
     
     xhr.onload = function(){
        var response = JSON.parse(this.response)  // converting the response
@@ -20,6 +20,7 @@ function loginUser(payload){
            }
            else{
                handleResponse(response)
+               getProfileDetails(user,response.token)
            }
        }
     }
@@ -34,7 +35,7 @@ function loginUser(payload){
 function getProfileDetails(user,token){
     var xhr = new XMLHttpRequest()
     xhr.open("GET","http://localhost:8080/user/"+user)
-    xhr.setRequestHeader("Authorization", "Bearer" +token)
+    xhr.setRequestHeader("Authorization", "Bearer " +token)
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8")
     xhr.send()
     
