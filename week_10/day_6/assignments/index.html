@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserDetails</title>
+</head>
+<body>
+    <input id="name" placeholder="name" name="name"/>
+    <input id ="phone" placeholder="Phn number" name="phone"/>
+    <button id="create">Create</button>
+
+    <div id="res">
+
+
+        <!-- results
+
+        card 1
+
+        card 2
+
+        each card
+        
+        three elements to it
+        
+        card 3 -->
+    </div>
+    <script type="text/javascript">
+
+    window.onload = function(){
+        var btn = document.getElementById("create")   // selecting the btn
+        btn.addEventListener('click',function(){     // adding the event listener to the btn
+            handleAdd()
+        })
+
+        var res = document.getElementById('res')
+        res.style.border = "1px solid red";
+
+        res.addEventListener('click',function(){
+            var elem = event.target
+            event.stopPropagation
+            if(elem.name ==="toggle"){
+                var phone = elem.nextElementSibling
+                if(phone.style.display==="none"){
+                    phone.style.display ="block"
+                }
+                else{
+                    phone.style.display = "none"
+                }
+            }
+            else{
+                return
+            }
+           
+        })
+      
+
+       
+    }
+
+    function handleAdd(){
+            var name = document.getElementById("name").value
+            var phone = document.getElementById("phone").value
+
+            var cont = createCard(name,phone)
+            var res = document.getElementById('res')
+
+            res.append(cont)
+
+        }
+
+        function createCard(username,phone){
+            var div = document.createElement('div')
+            div.style.border ="1px solid blue"
+
+            var name = document.createElement('p')
+            name.textContent = username
+
+            var button = document.createElement('button')
+            button.textContent = "show/Hide"
+            button.name ="toggle"
+
+            var phoneElem = document.createElement('p')
+            phoneElem.textContent = phone
+            phoneElem.style.display ="none"
+
+            div.append(name,button,phoneElem)
+            return div
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
