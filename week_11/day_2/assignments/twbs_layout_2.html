@@ -16,6 +16,15 @@
        .height3{
            height: 350px;
        }
+       .box{
+         border: 1px solid blue;
+       }
+       .box1{
+         border:1px solid red;
+       }
+       .box2{
+         border:1px solid green;
+       }
         
     </style>
 
@@ -24,18 +33,33 @@
   </head>
   <body>
 
-    <div class="container">
-        <div class="row">
-            
-             <div class=" bg-warning col-12  m-2 p-2 col-md-12 col-lg-12"><h1>Navigation</h1></div>
-             <div class=" bg-danger height col-12 m-2 p-5 col-md-12 col-lg-6"><h1>Left Box</h1>
-            </div>
-             <div class=" bg-success height2 col-12 m-2 p-2 col-md col-lg-5"><h1>Right Box1</h1></div>
-             <div class=" bg-success height2 col-12 m-2 p-2 col-md col-lg-4"><h1>Right Box2</h1></div>
-             <div class=" bg-success height2 col-12 m-2 p-2 col-md col-lg"><h1>Right Box3</h1></div>
-        
-        </div>
-    </div>
+   <div class="container">
+     <div class="row">
+       <div class=" box col-12 my-2 p-2">
+         <div class="bg-warning">
+           <h1>Navigation</h1>
+         </div>
+       </div>
+     </div>
+     <div class="row">
+       <div class=" box col-8">
+         <div class ="bg-danger my-2">
+           <h2>LEFT BOX</h2>
+         </div>
+
+       </div>
+       <div class=" box1 row">
+         <div class="box2 col-12">
+           <div class="bg-success">
+             <h2>RIGHT BOX 1</h2>
+           </div>
+         </div>
+
+       </div>
+      
+      
+     </div>
+   </div>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
