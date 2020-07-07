@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User & Email</title>
+</head>
+<body>
+    <form>
+        Username:<input id="name" type="text" placeholder="name"/>
+        Email: <input id="email" type="email" placeholder="email"/>
+        <button id="create">Login</button>
+    </form>
+    <div id ="res">
+
+    </div>
+
+
+
+    <script type="text/javascript">
+
+    window.onload=function(){
+        var btn = document.getElementByID("create")
+        btn.addEventListener('click', function(){
+            handleAdd()
+        })
+    }
+
+
+    function handleAdd(){
+        var name = document.getElementById('name').value
+        var email = document.getElementById('email').value
+
+        var cont = createCard(name,email)
+        var res = document.getElementById(res)
+
+        res.append(cont)
+    }
+
+
+    function createCard(username,email){
+        var div = document.createElement('div')
+        div.style.border = "1px solid blue"
+
+        var name =document.createElement('p')
+        name.textContent=username
+
+        var emailElem = document.createElement('p')
+        emailElem.textContent=email 
+
+        div.append(name,emailElem)
+    }
+
+    </script>
+    
+</body>
+</html>

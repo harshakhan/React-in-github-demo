@@ -1,0 +1,270 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+</head>
+<body>
+   
+</body>
+<script>
+    var person ={
+    name: "harewn",
+    age:43,
+    type:"person",
+    display: function(){
+        console.log(this.type,'is',this.name)
+    },
+    company :{
+        name:"masai",
+        type:"organisation",
+        display: function(){
+            console.log(this.type,'is',this.name)
+
+        }
+    }
+}
+person.display()
+person.company.display()
+
+
+</script>
+</html> -->
+
+
+<!-- //---------------------------------------------------------------------------------------------------- -->
+<!-- //wrapper function
+// Samarter way to do this 
+//here object is passed as refference we are creating key for that object -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+</head>
+<body>
+   
+</body>
+<script>
+    var person ={
+    name: "harewn",
+    age:43,
+    type:"person",
+    company :{
+        name:"masai",
+        type:"organisation",
+    }
+}
+
+
+//----------------------------------------------------------------------------------------------------
+function displayWrapper(obj){
+    obj.display = function(){
+        console.log(this.type,'is',this.name)
+    }
+}
+
+displayWrapper(person)
+displayWrapper(person.company)
+//
+
+person.display()
+person.company.display()
+
+
+</script>
+</html> -->
+
+
+<!-- //---------------------------------------------------------------------------------------------------- -->
+<!-- // More better way to do it  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+</head>
+<body>
+   
+</body>
+<script>
+    var person ={
+    name: "harewn",
+    age:43,
+    type:"person",
+    company :{
+        name:"masai",
+        type:"organisation",
+    }
+}
+
+function display(){
+    console.log(this.type,'is',this.name)
+}
+
+display.call(person)  //1. it invotes the function as display and it passes the person object as refference
+display.call(person.company)
+
+// the object to be called by reference
+// arg1, arg2
+
+
+
+</script>
+</html> -->
+
+<!-- //--------------------------------------------------------------------------------------------------------------------- -->
+<!-- // APPLY METHOD -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+</head>
+<body>
+   
+</body>
+<script>
+    var person ={
+    name: "harewn",
+    age:43,
+    type:"person",
+    company :{
+        name:"masai",
+        type:"organisation",
+    }
+}
+
+function display(arg1,arg2){
+    console.log(this.type,'is',this.name)
+    console.log('arguments are',arg1,arg2)
+}
+
+display.apply(person, ['bangalore', 'KA'])  //1. it invotes the function as display and it passes the person object as refference
+display.apply(person.company,['chennai','IN'])
+
+// the object to be called by reference
+// arg1, arg2
+
+
+
+</script>
+</html> -->
+
+
+
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- Bind Method -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+</head>
+<body>
+   
+</body>
+<script>
+    var person ={
+    name: "harewn",
+    age:43,
+    type:"person",
+    company :{
+        name:"masai",
+        type:"organisation",
+    }
+}
+
+function display(arg1,arg2){
+    console.log(this.type,'is',this.name)
+    console.log('arguments are',arg1,arg2)
+}
+
+display.apply(person, ['bangalore', 'KA'])  //1. it invotes the function as display and it passes the person object as refference
+display.apply(person.company,['chennai','IN'])
+
+// the object to be called by reference
+// arg1, arg2
+
+//bind
+
+var d1 = display.bind(person)
+var d2 = display.bind(person.company)
+
+d1()
+d2()
+
+
+</script>
+</html> -->
+
+<!-- 
+----------------------------------------------------------------------------------------------------------- -->
+
+<!-- use strict -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+</head>
+<body>
+   
+</body>
+<script>
+    var type = "example"
+    var name = "window"
+    var person ={
+    name: "harewn",
+    age:43,
+    type:"person",
+    company :{
+        name:"masai",
+        type:"organisation",
+    }
+}
+
+function display(arg1,arg2){
+    "use strict";
+    console.log(this.type,'is',this.name)
+   
+}
+
+// display.apply(person, ['bangalore', 'KA'])  //1. it invotes the function as display and it passes the person object as refference
+// display.apply(person.company,['chennai','IN'])
+
+// // the object to be called by reference
+// // arg1, arg2
+
+// //bind
+
+// var d1 = display.bind(person)
+// var d2 = display.bind(person.company)
+
+// d1()
+// d2()
+display()
+
+
+</script>
+</html>
+
