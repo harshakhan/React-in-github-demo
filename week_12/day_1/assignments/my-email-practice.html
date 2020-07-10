@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div id ="form_div" class="container">
+          <form>
+              <label for="user_email">Email</label>
+              <input type = "email" id ="email" class="form-control" placeholder ="Enter Email">
+              <hr>
+              <label for="user_address">Adress:</label>
+              <input type = "text" id ="address" class="form-control" placeholder ="Enter Address">
+              <hr>
+              <button id="submit"  type="submit" class="btn btn-primary">Submit</button>
+              
+          </form>
+
+          <div id="res" class="container my-4 card text-white bg-primary mb-3 border border-dark " style="max-width: 18rem;"></div>
+
+          <script type="text/javascript">
+          window.onload = function(){
+              var form = document.querySelector("form")
+              form.addEventListener("submit",handleForm)
+          }
+
+          function handleForm(){
+              event.preventDefault()
+
+              var email = document.getElementById('email').value
+              var address = document.getElementById('address').value
+
+              card(email,address)
+          }
+
+          function card(email,address){
+              var payload = {
+                  email_id:email,
+                  address:address
+              }
+              display.call(payload)
+          }
+
+          function display(){
+              var email = this.email_id
+              var address = this.address
+
+              var res = document.getElementById("res")
+
+              
+              var card = document.createElement("div")
+              
+              card.style.height = "50px"
+              card.style.width ="300px"
+              card.style.whiteSpace ="pre-line"
+              card.textContent="email :" + email + "\n address: " + address
+              res.append(card)
+            
+          }
+
+
+          </script>
+      </div>
+      
+
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

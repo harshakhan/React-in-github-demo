@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>CALL APPLY BIND</title>
+</head>
+
+<body>
+    <form>
+      
+        <input type="text" id="email" placeholder="email">
+        <input type="text" id="address" placeholder="address">
+        <input type="submit" value="SUBMIT">
+    </form>
+    <div id="res">
+
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var form = document.querySelector('form')
+            form.addEventListener("submit", handleForm)
+        }
+
+
+        function handleForm() {
+            event.preventDefault()
+            
+            var email = document.getElementById("email").value
+            var address = document.getElementById("address").value
+
+
+            card( email,address)
+
+        }
+
+        function card(email,address) {
+            var payload = {
+               
+                email_id: email,
+                address:address
+            }
+
+
+          
+
+            display.call(payload)
+           
+        }
+
+
+        function display(){
+            
+             var email=this.email_id
+             var address=this.address
+
+
+            var res=document.getElementById("res")
+
+            var card = document.createElement("div")
+             card.style.border="2px solid black"
+             card.style.height="50px"
+             card.style.width="300px"
+             card.style.whiteSpace="pre-line"
+             card.textContent="email : "+ email +"\n address : "+ address
+
+            res.append(card)
+
+        }
+
+    </script>
+</body>
+
+</html>
