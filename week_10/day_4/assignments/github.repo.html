@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <style>
+            div{
+                white-space: pre-line;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>
+             <input type="text" id="search">
+        </div>     
+        <div>
+            <select id="sort">
+                <option>---</option>
+                <option value="stars">stars</option>
+                <option value="fork">fork</option>
+                <option value=" help"> Help-wanted-issues</option>
+                <option value="updated">how recent they were updated</option>
+            </select>
+        </div>
+        <div>
+            <select id="order">
+                 <option value="----">----</option>
+                 <option value="asc">Asc</option>
+                 <option value="desc">Desc</option>
+            </select>
+        </div>
+        <div>
+              <button type="button" class="btn btn-outline-primary">Submit</button>
+        </div>      
+
+        <div id="res">
+            
+        </div>
+        <script type="text/javascript" src="github-repo.js"></script>
+    
+    </body>
+</html>
