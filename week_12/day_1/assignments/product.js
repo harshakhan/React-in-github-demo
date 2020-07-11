@@ -21,6 +21,7 @@ function handleForm(){
         price:price,
         id:Date.now()
     }
+    
     cartArray.push(payload)
     var elem = createCard(payload)
     var cont = document.querySelector("#cart")

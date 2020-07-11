@@ -7,7 +7,7 @@
 
 //forEach method is used iterate very array
 
-//-------------------------------------------------n-
+//--------------------------------------------------
 
 
 function Person(name,age,energy){   // creating constructor
