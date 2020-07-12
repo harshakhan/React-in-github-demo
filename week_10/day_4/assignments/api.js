@@ -2,8 +2,6 @@ window.onload = function(){
     var form  = document.querySelector("form")
     form.addEventListener('submit',handleForm)
 }
-
-
 function handleForm(){
     event.preventDefault()
 
@@ -22,7 +20,6 @@ function handleForm(){
         handleResponseRequest(data)
     }
 }
-
 
 function handleResponseRequest(data){
     console.log(data.codenames)
