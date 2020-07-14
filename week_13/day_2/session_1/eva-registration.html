@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>REGISTRATION</title>
+        <style>
+            *{
+                font-family: 'Righteous', cursive;
+            }
+            div{
+                white-space:pre-line;
+                margin: auto;
+
+            }
+            #center{
+                text-align: center;
+                color:#1A237E;
+            }
+            #email{
+                height: 50px;
+                width: 300px;
+                border-radius: 10px;
+                border: hidden;
+                background-color:#FFB74D;
+                color: black;
+            }
+            #password{
+                background-color:#FFB74D;
+                border: hidden;
+                height: 50px;
+                width: 300px;
+                border-radius: 10px;
+            }
+            #submit{
+                margin-top: 20px;
+              
+                padding: 10px;
+                border: 2px solid blue;
+                background-color: #90CAF9;
+                width:300px;
+                border-radius: 20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id ="center">
+            <h2>Registration </h2>
+        </div>
+        <form id ="center">
+            <div>
+                EMAIL:
+                 <input type="email"  id="email" placeholder="email">
+            </div>     
+            <div>
+                Password:
+                 <input type="password" id="password" placeholder="password"> 
+            </div>
+            <div>
+                <input type="submit" value="Submit" id ="submit">
+            </div>
+        </form>
+        <div id="res"></div>
+        <script type="text/javascript" src="eva-registration.js"></script>
+    </body>
+</html>
