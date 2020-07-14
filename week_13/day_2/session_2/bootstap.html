@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <title>KARLO COMPANY</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="font-weight-bold">Raised Tickets/Issues</h3>
+        <form>
+            <div class="form-group col-md-4">
+                <label for="inputState">Product Category</label>
+                <select id="inputState" class="form-control">
+                    <option>Electronics</option>
+                    <option>Furniture</option>
+                    <option>Home Appliance</option>
+                    <option>Books</option>
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <fieldset disabled>
+                <div class="form-group">
+                    <label for="disabledTextInput">Date</label>
+                    <input type="text" id="disabledTextInput" class="form-control" placeholder="14 july 2020">
+                </div>
+            </fieldset>
+        </form>
+        <button type="button" class="btn btn-primary" id="submit">SUBMIT</button>
+        <br>
+        <hr>
+       
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Issues</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+              </tr>
+        </thead>
+        
+        <div id="res"></div>
+    </table>
+
+
+    </div>
+    <script type="text/javascript">
+        var arr = []
+        window.onload = function () {
+            var btn = document.getElementById("submit")
+            btn.addEventListener("click", handleSubmit)
+        }
+
+        function handleSubmit() {
+          
+            var issues = document.getElementById("inputState").value
+
+            var description = document.getElementById("exampleFormControlTextarea1").value
+          
+            var date = "14 july 2020"
+          
+
+            var data = {
+                issues: issues,
+                description: description,
+                date: date,
+                id: arr.length + 1
+
+            }
+            // console.log(data)
+            arr.push(data)
+            renderDom(arr)
+        }
+
+        function renderDom(arr) {
+            var target = document.querySelector(".table")
+            // target.innerHTML=" "
+            // console.log(target)
+            
+           
+            for (var i = 0; i < arr.length; i++) {
+                var row = createRow(arr[i])
+                // console.log(row)
+                target.append(row)
+            }
+
+        }
+
+
+        function createRow(data) {
+            var issues = data.issues
+            var description = data.description
+            var date = data.date
+            // console.log(issues,description,date)
+         
+            var res=document.getElementById("res")
+            res.innerHTML=" "
+            var tr = document.createElement("tr")
+            var td1 = document.createElement("td")
+            td1.textContent = issues
+            var td2 = document.createElement("td")
+            td2.textContent = description
+            var td3 = document.createElement("td")
+            td3.textContent = date
+            
+            tr.append(td1, td2, td3)
+            res.append(tr)
+        
+            return (tr)
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
