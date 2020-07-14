@@ -4,8 +4,9 @@ window.onload = function () {
     var formInput = document.getElementById("form")
     formInput.addEventListener("submit", createForm)
 
+    var filter = document.querySelector("#filter")
+    filter.addEventListener('change', handleFilter)
 
-    
 }
 function createForm() {
     event.preventDefault()
@@ -16,6 +17,7 @@ function createForm() {
         product1: input[1].value,
         product2: input[2].value,
         product3: input[3].value,
+        product4: input[4].value,
         
     };
 
@@ -23,10 +25,12 @@ function createForm() {
     input[1].value = ""
     input[2].value = ""
     input[3].value = ""
+    input[4].value = ""
 
 
 
     arr.push(data)
+    console.log(arr)
     
 
     renderDom(arr)
@@ -95,3 +99,13 @@ function createRow(data) {
     target.append(tr)
 
 }
+function handleFilter(){
+    var title= event.target.value
+    
+    // console.log(department)
+    var newArr = arr.filter( function(item){
+      return item.title===title
+    } )
+    
+    renderDom(newArr)
+  }
