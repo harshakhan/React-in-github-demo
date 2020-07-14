@@ -13,9 +13,9 @@ function createForm() {
     var data = {
         
         title: input[0].value,
-        sales1: input[1].value,
-        sales2: input[2].value,
-        sales3: input[3].value,
+        product1: input[1].value,
+        product2: input[2].value,
+        product3: input[3].value,
         
     };
 
@@ -62,8 +62,7 @@ function createTable() {
     td3.textContent = "Product Describtion"
     var td4 = document.createElement("td")
     td4.textContent = "Product Price"
-    // var td5 = document.createElement("td")
-    // td5.textContent = "AVERAGE"
+    
     tr.append(td1, td2, td3, td4,)
     table.append(tr)
     target.append(table)
@@ -71,23 +70,23 @@ function createTable() {
 
 function createRow(data) {
     var name = data.title
-    var sales1 = data.sales1
-    var sales2 = data.sales2
-    var sales3 = data.sales3
-    var avg = data.avg
+    var product1 = data.product1
+    var product2 = data.product2
+    var product3 = data.product3
+   
 
     var tr = document.createElement("tr")
     var td1 = document.createElement("td")
     td1.textContent = name
 
     var td2 = document.createElement("td")
-    td2.textContent = sales1
+    td2.textContent = product1
 
     var td3 = document.createElement("td")
-    td3.textContent = sales2
+    td3.textContent = product2
 
     var td4 = document.createElement("td")
-    td4.textContent = sales3
+    td4.textContent = product3
     
     tr.append(td1, td2, td3, td4)
     table.append(tr)
