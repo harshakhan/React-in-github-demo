@@ -1,66 +1,112 @@
 var arr = []
 window.onload = function () {
     var btn = document.getElementById("submit")
-    btn.addEventListener("click", handleSubmit)
+    btn.addEventListener("click", handleButton)
+
+     
+    var filter = document.querySelector("#filter")
+    filter.addEventListener('change', handleFilter)
 }
 
-function handleSubmit() {
-  
-    var issues = document.getElementById("inputState").value
 
-    var description = document.getElementById("exampleFormControlTextarea1").value
-  
-    var date = "14 july 2020"
-  
+
+function handleFilter(){
+    var inputState= event.target.value
+    
+    var newArr = arr.filter( function(item){
+      return item.inputState===inputState
+    } )
+    
+    renderDom(newArr)
+  }
+
+
+function handleButton() {
+
+    var inputState = document.getElementById("inputState").value
+    var ProductTitle = document.getElementById("ProductTitle").value
+    var productDescription = document.getElementById("productDescription").value
+    var productPrice = document.getElementById("productPrice").value
+
+   
+
 
     var data = {
-        issues: issues,
-        description: description,
-        date: date,
+        inputState: inputState,
+        ProductTitle:ProductTitle,
+        productDescription:productDescription,
+        productPrice:productPrice,
         id: arr.length + 1
 
     }
-    // console.log(data)
     arr.push(data)
     renderDom(arr)
 }
 
 function renderDom(arr) {
-    var target = document.querySelector(".table")
-    // target.innerHTML=" "
-    // console.log(target)
-    
-   
-    for (var i = 0; i < arr.length; i++) {
-        var row = createRow(arr[i])
-        // console.log(row)
-        target.append(row)
-    }
 
+    var target = document.getElementById("res")
+    target.innerHTML = ""
+    createRows()
+    var len = arr.length
+    console.log(len)
+    for (var i = 0; i < arr.length; i++) {
+        createRow(arr[i])
+    }
+}
+
+function createRows() {
+
+    var target = document.getElementById("res")
+    var table = document.createElement("table")
+    table.setAttribute("id", "table")
+    table.style.padding = "30px";
+    table.style.margin = "5px";
+    table.style.color = "black";
+    table.setAttribute("border", "1px")
+    var tr = document.createElement("tr")
+    var td1 = document.createElement("td")
+    td1.textContent = "Product Category"
+    var td2 = document.createElement("td")
+    td2.textContent = "Product Title"
+    var td3 = document.createElement("td")
+    td3.textContent = "Product Description"
+    var td4 = document.createElement("td")
+    td4.textContent = "Product Price"
+
+    tr.append(td1, td2, td3,td4)
+    table.append(tr)
+    target.append(table)
 }
 
 
 function createRow(data) {
-    var issues = data.issues
-    var description = data.description
-    var date = data.date
-    // console.log(issues,description,date)
- 
-    var res=document.getElementById("res")
-    res.innerHTML=" "
+    var inputState= data.inputState
+    var ProductTitle = data.ProductTitle
+    var productDescription= data.productDescription
+    var  productPrice = data.productPrice
+
+
     var tr = document.createElement("tr")
     var td1 = document.createElement("td")
-    td1.textContent = issues
+    td1.textContent = inputState
+
     var td2 = document.createElement("td")
-    td2.textContent = description
+    td2.textContent = ProductTitle
+
     var td3 = document.createElement("td")
-    td3.textContent = date
-    
-    tr.append(td1, td2, td3)
-    res.append(tr)
+    td3.textContent = productDescription
 
-    return (tr)
+    var td4 = document.createElement("td")
+    td4.textContent = productPrice
+
+
+
+    tr.append(td1, td2, td3,td4)
+    table.append(tr)
+
+    var target = document.getElementById("table")
+    target.append(tr)
 }
-
 
 

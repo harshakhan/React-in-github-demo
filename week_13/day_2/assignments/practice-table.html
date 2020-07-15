@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bozaz</title>
+
+    <style>
+
+
+        *>body{
+            font-family: 'Josefin Sans', sans-serif;
+            background: linear-gradient(90deg,#f0027f,#75489f)
+        }
+        body>h1{
+            text-align: center;
+            font-size: 40px;
+            color: white;
+        }
+       
+        #table>tr{
+            border:2px solid#AA00FF;
+            
+            text-align: center;
+            line-height: 30px;
+            color: black;
+            margin: 5px;
+            background-color: #E1BEE7 ;
+            font-size: 25px;
+            
+        }
+        #table{
+            border: hidden;
+            align-items: center;
+        }
+        div{
+            margin: 0;
+          
+        }
+        form >h1{
+            text-align: center;
+            font-size: 45px;
+            color: white;
+        }
+        form >input{
+            padding: 10px;
+            margin: 10px;
+            border: 3px solid #AA00FF;
+            background-color: #E1BEE7 ;
+            border-radius: 15px;
+            margin-left: 60px;
+            margin-top: 40px;
+        }
+        select{
+            padding: 10px;
+            margin: 10px;
+            border: 3px solid #AA00FF;
+            background-color: #E1BEE7 ;
+            border-radius: 15px;
+        }
+        #center{
+            text-align: center;
+        }
+       
+
+
+    </style>
+</head>
+<body>
+    <h1 id ="center">Bozaz Products</h1>
+    <form id="form">
+        <select id="sort">
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Home Application">Home Application</option>
+            <option value="Books">Books</option>
+        </select>
+
+        <input type="text" placeholder="product title" id="name">
+        <input type="text" placeholder="product description" id="sales1">
+        <input type="text" placeholder="product price" id="sales2">
+        
+        <select id="filter">
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Home Application">Home Application</option>
+            <option value="Books">Books</option>
+        </select>
+       
+
+       
+       
+        <input type="submit" value="ADD DATA">
+    </form>
+
+    <div id="res"></div>
+
+
+
+
+
+    <script src="bozaz.js"></script>
+</body>
+</html>

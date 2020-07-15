@@ -1,104 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bozaz</title>
+<html>
 
+<head>
+    <title>Bozaz Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
 
+    *{
+        font-family: 'Bangers', cursive;
+    }
+    #bill-div {
+    border: 1px solid black;
+    height: 600px;
+    width: 1000px;
+    margin-left: 5px;
+    }
 
-        *>body{
-            font-family: 'Josefin Sans', sans-serif;
-            background: linear-gradient(90deg,#f0027f,#75489f)
-        }
-        body>h1{
-            text-align: center;
-            font-size: 40px;
-            color: white;
-        }
-       
-        #table>tr{
-            border:2px solid#AA00FF;
-            
-            text-align: center;
-            line-height: 30px;
-            color: black;
-            margin: 5px;
-            background-color: #E1BEE7 ;
-            font-size: 25px;
-            
-        }
-        #table{
-            border: hidden;
-            align-items: center;
-        }
-        div{
-            margin: 0;
-          
-        }
-        form >h1{
-            text-align: center;
-            font-size: 45px;
-            color: white;
-        }
-        form >input{
-            padding: 10px;
-            margin: 10px;
-            border: 3px solid #AA00FF;
-            background-color: #E1BEE7 ;
-            border-radius: 15px;
-            margin-left: 60px;
-            margin-top: 40px;
-        }
-        select{
-            padding: 10px;
-            margin: 10px;
-            border: 3px solid #AA00FF;
-            background-color: #E1BEE7 ;
-            border-radius: 15px;
-        }
-        #center{
-            text-align: center;
-        }
-       
+    table {
+    
+        border-collapse: collapse;
+        width: 100%;
+    }
+    tr:nth-child(even) {
+        background-color:#C8E6C9;
+    }
+    td,th {
+        border: 1px solid #66BB6A;
+        text-align: left;
+        padding: 8px;
+    }
 
-
+   
     </style>
 </head>
+
+
 <body>
-    <h1 id ="center">Bozaz Products</h1>
-    <form id="form">
-        <select id="sort">
+    <div class="container-fluid">
+        <h2 class="font-weight-bold text-center text-success">Bozaz Product</h2>
+        <form>
+            <div class="input-group mb-3 mt-4 ">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-success" type="button">Product Catagory</button>
+                </div>
+                <select class="custom-select" id="inputState" aria-label="Example select with button addon">
+                 <option>Choose...</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Home">Home</option>
+                    <option value="Appliance">Appliance</option>
+                    <option value="Books">Books</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-success" type="button" id="button-addon1">Product Title</button>
+                </div>
+                <input type="text" class="form-control" placeholder="title"  id="ProductTitle" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-success" type="button" id="button-addon1">Product Description</button>
+                </div>
+                <input type="text" class="form-control" placeholder="description"  id="productDescription" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-success" type="button" id="button-addon1">Product Price $</button>
+                </div>
+                <input type="text" class="form-control" placeholder="price"  id="productPrice" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              </div>
+        </form>
+        <button type="button" class="btn btn-success" id="submit">SUBMIT</button>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                    <a class="page-link text-success" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link bg-success text-white" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-success" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-success" href="#">3</a></li>
+                <li class="page-item text-success">
+                    <a class="page-link text-success" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+        Filter:
+        <select class="text-success" id="filter">
+            <option>Choose...</option>
             <option value="Electronics">Electronics</option>
             <option value="Furniture">Furniture</option>
-            <option value="Home Application">Home Application</option>
+            <option value="Home">Home</option>
+            <option value="Appliance">Appliance</option>
             <option value="Books">Books</option>
         </select>
 
-        <input type="text" placeholder="product title" id="name">
-        <input type="text" placeholder="product description" id="sales1">
-        <input type="text" placeholder="product price" id="sales2">
-        
-        <select id="filter">
-            <option value="Electronics">Electronics</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Home Application">Home Application</option>
-            <option value="Books">Books</option>
-        </select>
-       
+        <br>
+        <hr>
+        <div id="res"></div>
+    </div>
+    <script type="text/javascript" src="bozaz.js">
 
-       
-       
-        <input type="submit" value="ADD DATA">
-    </form>
-
-    <div id="res"></div>
-
-
-
-
-
-    <script src="bozaz.js"></script>
+    </script>
 </body>
+
 </html>
