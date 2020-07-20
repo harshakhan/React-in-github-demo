@@ -60,8 +60,8 @@ function createRows() {
     var target = document.getElementById("res")
     var table = document.createElement("table")
     table.setAttribute("id", "table")
-    table.style.padding = "30px";
-    table.style.margin = "5px";
+    table.style.padding = "32px";
+    table.style.margin = "6px";
     table.style.color = "black";
     table.setAttribute("border", "1px")
     var tr = document.createElement("tr")
