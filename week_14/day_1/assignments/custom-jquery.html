@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Custom - Jquery</title>
+    <style>
+        div {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div id ="div1" style = "width:80px;height:80px; display: none; background-color: blue;"></div>
+    <div id ="div2" style = "width: 80px; height: 80px; background-color: green;"></div>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function () {
+                $("#div1").fadeIn(3000);
+            });
+
+        });
+    </script>
+    <script>
+        $(documnet).ready(function() {
+            $("button").click(function () {
+                $("#div2").fadeOut(3000);
+            });
+        });
+    </script> 
+    
+    <button type = "button" id ="show"> SHOW</button>
+    <button type = "button" id ="hide">HIDE</button>
+    <button>Click to fade in boxes</button>
+    <button>Click to fade out boxes</button>
+    <script type = "module" src ="method.js"></script>
+</body>
+</html>
