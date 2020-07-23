@@ -1,0 +1,162 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input id="input">
+   <button id ="submit"> GET</button>
+   <div id ="res"></div>
+   <script type = "text/javascript">
+    
+    var btn = document.getElementById('submit')
+    btn.addEventListener('click', function(){
+        var xhr = new XMLHttpRequest()
+        var q = document.getElementById('input').value
+        // console.log(q)
+        xhr.open('GET','https://api.github.com/search/users?q='+q)
+        xhr.send()
+        xhr.onload = function(){
+            if(this.status === 200){
+                res = JSON.parse(this.response)
+                printData(res)  // after declaring the fun we are invoking over here
+
+                followers = res.items[0]['followers_url']
+                // console.log(followers)    // we will get folwers url in console
+
+                var getFollowers = new XMLHttpRequest()    //creating another xhr req
+                getFollowers.open('GET', followers)
+                getFollowers.send()
+                getFollowers.onload = function(){
+                    if(this.status === 200){
+                        printData(this.response)
+                    }
+
+                }
+              
+            }
+
+        }
+    })
+
+    function printData(data){
+        var res =  document.getElementById('res')  // appending the data into result
+        var p = document.createElement('p')
+        p.textContent  = JSON.stringify(data)
+        res.append(p)
+    }
+    </script>
+
+
+</body>
+</html> -->
+<!-- ------------------------------------------------------------------------------------------- -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input id="input">
+   <button id ="submit"> GET</button>
+   <div id ="res"></div>
+   <script type = "text/javascript">
+    
+    // var btn = document.getElementById('submit')
+    // btn.addEventListener('click', function(){
+    //     var q = document.getElementById('input').value
+    //     searchUser(q,getFollowersRequest)
+        
+    // })
+
+    // function searchUser(q,callback){
+    //     var xhr = new XMLHttpRequest()
+    //     xhr.open('GET','https://api.github.com/search/users?q='+q)
+    //     xhr.send()
+    //     xhr.onload = function(){
+    //         if(this.status === 200){
+    //             res = JSON.parse(this.response)
+    //             printData(res)  // after declaring the fun we are invoking over here
+
+    //             followers = res.items[0]['followers_url']
+    //             // console.log(followers)    // we will get folwers url in console
+    //             callback(followers)
+
+              
+    //         }
+
+    //     }
+
+    // }
+
+    // function getFollowersRequest(followers){
+    //     var getFollowers = new XMLHttpRequest()    //creating another xhr req
+    //             getFollowers.open('GET', followers)
+    //             getFollowers.send()
+    //             getFollowers.onload = function(){
+    //                 if(this.status === 200){
+    //                     printData(this.response)
+    //                 }
+
+    //             }
+
+    // }
+
+    // function printData(data){
+    //     var res =  document.getElementById('res')  // appending the data into result
+    //     var p = document.createElement('p')
+    //     p.textContent  = JSON.stringify(data)
+    //     res.append(p)
+    // }
+
+
+    //----------------------------------------------------------------------------------
+    var btn = document.getElementById('submit')
+    btn.addEventListener('click', function(){
+        var q = document.getElementById('input').value
+        searchUser(q,getFollowersRequest)
+        
+    })
+
+    function searchUser(q,callback){
+        return fetch('https://api.github.com/search/users?q='+q)
+        .then(res=>res.json())
+        .then(res=>{
+            printData(res)
+            callback(res.items[0]['followers_url'])
+            .then(() =>console.log('first'))
+        })
+        .then(() =>{
+            throw new Error
+        })
+        .catch(err=>console.log('error is',err))
+ 
+
+    }
+
+    function getFollowersRequest(followers){
+        return fetch(followers)
+        .then(res=>res.json())
+        .then(res=>printData(res))
+        .then(() =>console.log('first'))
+  
+
+    }
+
+    function printData(data){
+        var res =  document.getElementById('res')  // appending the data into result
+        var p = document.createElement('p')
+        p.textContent  = JSON.stringify(data)
+        res.append(p)
+    }
+    </script>
+
+
+</body>
+</html>

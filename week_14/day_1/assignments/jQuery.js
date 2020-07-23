@@ -9,7 +9,7 @@ JQuery.prototype.each = function(callback){
     for(var i=0;i<this.length;i++){
         callback(this.nodes[i],i)
     }
-    return this  //this return the elemens
+    return this  //this return the elements
 }
 
 JQuery.prototype.hide = function(){

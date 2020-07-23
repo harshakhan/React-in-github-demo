@@ -1,0 +1,31 @@
+promise 
+
+
+it has 3 stages:
+
+1.pending
+
+2.fulfilled
+
+3.rejected
+
+-------------------------------------------------------------------
+
+
+
+fetch api - nit helps you to do your http request
+
+.then - it is like channing
+
+
+promise:
+
+// it takes two argument as a callback function
+
+var promise =new Promise((resolve, reject)=>{
+    //do some logic
+    // resolve 
+
+    //if error
+    //reject
+})
