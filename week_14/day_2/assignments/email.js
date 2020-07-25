@@ -118,7 +118,19 @@ const emailChecker = (email)=> {
     return true
 }
 
-let test =`mysite@masaischool.com 
-my.name@masaischool.org mysite@masai.school.net`.split('\n').map(emailChecker)
+let test =`mysite@masaischool.com
+my.name@masaischool.org
+mysite@masai.school.net 
+mysite@masaischool.com 
+my.name@masaischool.org
+mysite@masai.school.net
+masai.school.com
+masai@.com 
+@masai.school.net
+name@gmail.b
+name@.org.org
+.name@masaischool.org
+masaischool()*@gmail.com
+name..1234@yahoo.com`.split('\n').map(emailChecker)
 
 console.log(test)

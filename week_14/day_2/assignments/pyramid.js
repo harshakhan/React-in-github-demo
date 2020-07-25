@@ -35,25 +35,23 @@
 //------------------------------------------------
 const getDots = num => new Array(num).fill('.').join("")
 
-const getZeros = num => new Array(num).fill('O').join(".")
+const getZeroes = num => new Array(num).fill('O').join(".")
 
-console.log( getDots(3)+getZeros(1)+getDots(3))
-console.log( getDots(2)+getZeros(2)+getDots(2))
-console.log( getDots(1)+getZeros(3)+getDots(1))
-const makePyramid = size =>{
-
+const getPattern =(size,offset =0)=> {
+    const out =[]
+    for(let i =0 ; i<size-offset;i++){
+        out[i] = getDots(size-i) + getZeroes(i+1)+ getDots(size-i)
+    }
+    return out
 }
+const makePyramid = size => getPattern(size).join('\n')
 
-const makeInversePyramid = size => {
+const makeInversePyramid = size => getPattern(size).reverse().join('\n')
 
-}
-
-const makeRhombus = size => {
-
-}
+const makeRhombus = size => [...getPattern(size),...getPattern(size,1).reverse()].join('\n')
 
 const pyramid = input => {
-    const[ size, type] = input.split(' ');
+    let [ size, type] = input.split(' ');
     size = Number(size);
 
     switch(type){
@@ -68,7 +66,7 @@ const pyramid = input => {
     }
 }
 
-// ['4 pyramid','4 inverse_pyramid', '4 rhombus']. forEach(test => console.log(pyramid(test)))
+['4 pyramid','4 inverse_pyramid', '4 rhombus']. forEach(test => console.log(pyramid(test)+ '\n'))
 
 
 
