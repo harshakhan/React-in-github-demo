@@ -40,92 +40,79 @@
 // }
 
 //-----------------------------------------------------------------
-const allowedChars = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890_-'
-const checkIfAllowed = name =>{
-    for(let i =0;i < name.length; i++){
-        if(allowedChars.indexOf(name[i]) === -1 ){
-            return false
-        }
-    }
-    return true
+const allowedChars = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234560789_.-'
+
+
+ const checkIfAllowed = name => {
+     for(var i = 0 ; i<name.lengh;i++){
+         if(allowedChars.indexOf(name[i]) === -1){
+             return false
+         }
+     }
+     return true
+ }
+
+const checkName = name => {
+ if(name.length === 0){
+     return false
+ }
+ if(name[0] === '.'){
+     return false
+ }
+ if(name.indexOf('..') !== -1){
+     return false
+ }
+ if(!checkIfAllowed(name)){
+     return false
+ }
+return true
+
 
 }
 
-const checkName = name =>{
-    
-    //empty name
-    if(name.length === 0 ){
+const checkForAt = email => email.split('@').length === 2
+
+
+const checkDomain  = domain => {
+    if(domain.lengh ===0 ){
         return false
     }
-    // canot start with dot
-    if(name[0] ==='.'){
+    if(domain[0] === '.' ){
         return false
     }
-
-    // double dots
-    if(name.indexOf('..') !==-1){
+    if(!checkIfAllowed(domain) ){
         return false
     }
-    // chack allowed charcter
-    if( !checkIfAllowed(name) ){
-        return false;
-
-    }
-    return true
-
-}
-
-const checkForAt = email => email.split('@').length ===2
-
-const checkDomain = domain => {
-
-    //canot be empty
-    if(domain.length === 0){
-        return false
-    }
-    // cannot start with .dot
-    if(domain[0] ==="."){
-        return false
-    }
-    if( !checkIfAllowed(domain)){
-        return false
-    }
-
-    // tld validation
-    let tld = domain.split('.')
-    tld = tld[tld.length-1]
-    if( ['org','net','com','in'].indexOf(tld) === -1){
+    let tld  = domain.split('.')
+    tld  = tld[tld.length -1]
+    if (['org','net','com','in'].indexOf(tld)===-1){
         return false
     }
     return true
 }
 
-const emailChecker = (email)=> {
+
+const emailChecker = (email) =>{
     if(!checkForAt(email)){
-        return false;
+          return false
     }
 
-    let [name,tld] = email.split('@')
+    let [name,tld] = email.split('@') 
 
     if(!checkName(name)){
-        return false;
+        return false
     }
     if(!checkDomain(tld)){
-        return false;
+        return false
     }
-
-
     return true
 }
 
-let test =`mysite@masaischool.com
-my.name@masaischool.org
-mysite@masai.school.net 
-mysite@masaischool.com 
+const test  = `mysite@masaischool.com
 my.name@masaischool.org
 mysite@masai.school.net
 masai.school.com
-masai@.com 
+masai@.com
 @masai.school.net
 name@gmail.b
 name@.org.org
@@ -133,4 +120,4 @@ name@.org.org
 masaischool()*@gmail.com
 name..1234@yahoo.com`.split('\n').map(emailChecker)
 
-console.log(test)
+console.log(test);
