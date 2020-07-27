@@ -115,7 +115,9 @@
 
 // converting string into 2d array
 
-// const input = '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15'
+// const input = `1 2 3 4 5 6
+//  7 8 9 10 
+//  11 12 13 14 15`
 
 // arr = input.split('\n').map(item => item.split(' '))
 // console.log(arr)
@@ -158,6 +160,18 @@
 // // 3 2
 
 //------------------------------------------------------------------------------------------------
+
+var arr = [1,2,3,4]
+
+for(var i=0;i<arr.length; i++){
+    display.call(arr,i)
+}
+
+function display(i){
+    setTimeout(() =>{
+        console.log(this[i],i)
+    }, i*1000)
+}
 
 
 

@@ -1,14 +1,14 @@
 // Promises generally takes as a callback
 // Promise takes the two arguments
 
-// console.log('first')
+console.log('first')
 
-// // async req
-// var promise = new Promise((resolve, reject)=>{   // resolve and refect are the two argument
-//     resolve('promise is resolved')
-// }).then(res=>console.log(res))
+// async req
+var promise = new Promise((resolve, reject)=>{   // resolve and refect are the two argument
+    resolve('promise is resolved')
+}).then(res=>console.log(res))
 
-// console.log("secound")
+console.log("secound")
 
 //--------------------------------------------------
 
@@ -71,18 +71,18 @@
 //finally  
 
 
-var promise = new Promise((resolve, reject)=>{   // resolve and refect are the two argument
-    resolve('promise is resolved')
+// var promise = new Promise((resolve, reject)=>{   // resolve and refect are the two argument
+//     resolve('promise is resolved')
 
-    reject('promise is rejected')
-})
+//     reject('promise is rejected')
+// })
 
-.then(res=>console.log(res))
-.catch(err=> console.log(err))
-.finally(() => console.log('finally'))
+// .then(res=>console.log(res))
+// .catch(err=> console.log(err))
+// .finally(() => console.log('finally'))
 
 
-// So even it get rejected it will be printed
+// // So even it get rejected it will be printed
 
 
 

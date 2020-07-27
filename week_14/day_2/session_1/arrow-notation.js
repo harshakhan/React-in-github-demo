@@ -4,7 +4,7 @@
 // functionality change
 
 // function sum(x,y){
-//     return x+ y
+//     return x+y
 // }
 
 // const shortSum = (x,y) =>{
@@ -62,6 +62,7 @@
 // obj.c()  // 10
 
 //------------------------------------------------------------------------------
+// for string
 
 // var str = '1 2 3 4 5 6 7'
 // var sum = str.split(' ').map (Number).reduce((a,c)=>a+c)
