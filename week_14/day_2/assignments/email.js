@@ -9,7 +9,7 @@
 //     Valid
 
 // mysite@masaischool.com
-// my.name@masaischool.org
+// sre@masaischool.org
 // mysite@masai.school.net
 
 // Not Valid
@@ -40,7 +40,7 @@
 // }
 
 //-----------------------------------------------------------------
-const allowedChars = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234560789_.-'
+const allowedChars = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234560789_-.'
 
 
  const checkIfAllowed = name => {
@@ -74,7 +74,7 @@ const checkForAt = email => email.split('@').length === 2
 
 
 const checkDomain  = domain => {
-    if(domain.lengh ===0 ){
+    if(domain.length ===0 ){
         return false
     }
     if(domain[0] === '.' ){
