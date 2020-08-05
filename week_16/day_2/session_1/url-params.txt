@@ -1,0 +1,38 @@
+
+URLSearchParams:-
+
+The URLSearchParams interface defines utility methods to work with the query string of a URL.
+
+An object implementing URLSearchParams can directly be used in a for...of structure.
+
+MDN
+
+The URLSearchParams() constructor creates and returns a new URLSearchParams object.
+
+var URLSearchParams = new URLSearchParams(init);
+
+Methods
+
+URLSearchParams.append()
+
+    Appends a specified key/value pair as a new search parameter.
+
+URLSearchParams.entries()
+
+    Returns an iterator allowing iteration through all key/value pairs contained in this object.
+
+URLSearchParams.has()
+
+    Returns a Boolean indicating if such a given parameter exists.
+
+URLSearchParams.set()
+
+    Sets the value associated with a given search parameter to the given value. If there are several values, the others are deleted.
+
+URLSearchParams.keys()
+
+    Returns an iterator allowing iteration through all keys of the key/value pairs contained in this object.
+
+Other methods:
+
+https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
