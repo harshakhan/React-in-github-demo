@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel ="stylesheet" type ="text/css" href="file:///home/harsha/Downloads/fontawesome-free-5.13.1-web/css/all.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <style>
+            *{
+               background-color: #424242;
+               color: white;
+               font-family: 'Lemonada', cursive;
+            }
+            *>body{
+                background-color: #424242;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container p-5">
+            <div class="row h3">
+                
+                <div class="col ml-3 h1 p-2 text-warning">
+                    Bank Login
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                
+               
+            </div>
+            <form>
+                <div class="form-group col-4">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="email">
+                  <small id="emailHelp" class="form-text text-warning">We'll never share your data</small>
+                </div>
+                <div class="form-group col-4">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-warning col-1 ml-3" id="submit">LogIn</button>
+            </form>
+        </div>
+        <script type="text/javascript" src="login.js"></script>
+    </body>
+</html>

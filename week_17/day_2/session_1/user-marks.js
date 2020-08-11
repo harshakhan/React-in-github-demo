@@ -72,7 +72,7 @@ handelSubmit = () => {
 
 topStudent = () => {
     let top = student_data.fetchTopStudents()
-    let target = document.getElementById("display_top")
+    let target = document.getElementById("top_student")
     if(top != null){
         
     target.innerHTML = `<p class="h4">${top.studentName}</p>
