@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id ="label" placeholder ="label"/>
+        <input type="text" id ="attendence" placeholder ="attendence"/>
+        <input type="text" id ="performance" placeholder ="performance"/>
+        <button id="btn-add">ADD</button>
+    </div>
+    <canvas id="chart"></canvas>
+    <form id ="update">
+        <select id="update-selections"></select>
+        <input type="text" id ="update-attendence" placeholder ="attendence"/>
+        <input type="text" id ="update-performance" placeholder ="performance"/>
+        <input type="submit" value="UPDATE"/>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script type="text/javascript">
+
+    let data = [
+        {
+           month: 'January',
+           attendence: 80,
+           performance:70
+        },
+        {
+           month: 'February',
+           attendence: 30,
+           performance:70
+        },
+        {
+           month: 'March',
+           attendence: 80,
+           performance:10
+        },
+    ]
+    let ctx;
+    const options ={
+        type: 'bar',
+        data: {
+            labels: data.map(item=>item.month),
+            datasets: [ 
+                {
+                    label:'attendence',                 
+                    data: data.map(item=>item.attendence),
+                    backgroundColor: 'rgba(200,50,100)'
+                },
+                {
+                    label :'performance',
+                    data: data.map(item=>item.performance),
+                    backgroundColor: 'rgba(200,10,220)'
+                }
+             ],
+        }, 
+        options: {
+            scales: {
+                yAxes:[
+                    {
+                        ticks:{
+                            beginAtZero: true
+                        }
+                    }
+                ]
+            }
+        }
+
+    }
+
+    window.addEventListener('DOMContentLoaded',function(){
+        ctx = document.getElementById('chart')
+        chart = new Chart(ctx, options)
+
+        let add = document.getElementById('btn-add')
+        add.addEventListener('click',handleAdd)
+
+        let form =document.getElementById('update')
+        form.addEventListener('submit',handleUpdate)
+        
+        let select = document.getElementById('select')
+
+
+        renderOption(data.map(item=>item.month))
+
+    })
+
+    function handleAdd(){
+        const label = document.getElementById('label').value
+        const attendence = document.getElementById('attendence').value
+        const performance = document.getElementById('performance').value
+        let payload ={label,attendence,performance}
+
+        addData(chart,payload)
+    }
+
+    function addData(chart,{label,attendence,performance}){
+       console.log(chart)
+       chart.data.labels.push(label)
+       chart.data.datasets[0].data.push(attendence)
+       chart.data.datasets[1].data.push(performance)
+
+       chart.update()
+    }
+
+    function handleChartUpdate(chart,{label,attendence,performance},index){
+       console.log(chart)
+       chart.data.labels[index] = label
+       chart.data.datasets[0].data[index] = attendence
+       chart.data.datasets[1].data[index] = performance
+
+       chart.update()
+    }
+
+    function renderOption(options){
+        const select = document.getElementById('update-selections')
+        const frag = document.createDocumentFragment()
+        options.forEach(item=>{
+            let option = document.createElement('option')
+            option.textContent = item
+            frag.append(option)
+        })
+        select.append(frag)
+    }
+
+    function handleUpdate(){
+        //update chart
+        event.preventDefault()
+        const label = document.getElementById('update-selections').value
+        const attendence = document.getElementById('update-attendence').value
+        const performance = document.getElementById('update-performance').value
+        let payload ={label,performance,attendence}
+        let index = data.indexOf(item=>item.month ===label)
+        handleChartUpdate(chart, payload, index)
+       
+
+    }
+
+    function handleOptionsChange(){
+        // update from input elements
+        console.log('updating')
+        const label = event.target.value
+        const attendence = document.getElementById('update-attendence')
+        const performance = document.getElementById('update-performance')
+
+        const bar = data.find(item=> item.month === label)
+        // console.log(data,ite)
+        attendence.value = bar.attendence
+        performance.value = bar.performance
+        console.log(item)
+
+
+    }
+    </script>
+    
+</body>
+</html>
