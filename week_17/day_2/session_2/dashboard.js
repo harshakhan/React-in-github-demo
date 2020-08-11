@@ -1,43 +1,44 @@
-async function verifyCode(){
-    let input = document.getElementById("ifsc_input").value
-    let target = document.getElementById("display_ifsc")
-    if(input != ""){
-    let url = "https://ifsc.razorpay.com/"+input
+async function code_verify(){
+    let ifsc_res = document.getElementById("ifsc_input").value
+    let target = document.getElementById("displayDetails")
+    if(ifsc_res != ""){
+    let url = "https://ifsc.razorpay.com/"+ifsc_res
    try{
        await fetch(url).then(response => response.json())
        
-      .then(data => {
+      .then(info => {
         target.innerHTML = `<div class=row><i class="far fa-check-circle h1 text-success"></i><div class="col-10">
          <div class="alert alert-success col-2" role="alert">
             <p class="h6" id="token">success</p>
         </div></div></div>
        <p class="h5 text-warning">Bank Details</p>
-        <p>Branch Name : ${data.BRANCH}</p>
-        <p>Bank Name : ${data.BANK}</p>
-        <p>IFSC Code : ${data.IFSC}</p>
-        <p>Address : ${data.ADDRESS}</p>
-        <p>City : ${data.CITY}</p>
-        <p>District : ${data.DISTRICT}</p>
-        <p>State : ${data.STATE}</p>
-        <p>Contact No : ${data.CONTACT}</p>`
+        <p>Branch Name : ${info.BRANCH}</p>
+        <p>Bank Name : ${info.BANK}</p>
+        <p>IFSC Code : ${info.IFSC}</p>
+        <p>Address : ${info.ADDRESS}</p>
+        <p>City : ${info.CITY}</p>
+        <p>District : ${info.DISTRICT}</p>
+        <p>State : ${info.STATE}</p>
+        <p>Contact No : ${info.CONTACT}</p>`
       })
      
 
    }
     catch(error){
-        target.innerHTML = `<div class="col-10">
+        target.innerHTML = `<div class="col-8">
         <div class="alert alert-warning" role="alert">
-            <p class="h5" id="token">Invalid</p>
+            <p class="h3" id="token">Wrong Data</p>
         </div></div>`
     
     }
 }
     else {
-       target.textContent = "Enter IFSC Code" 
+       target.textContent = "IFSC Code Missing", 
+       target.style.color="red"
     }
  }
 
-displayToken= () => {
+showToken= () => {
     let token = document.getElementById("token")
     let query = window.location.search
     if(query != ""){
@@ -48,9 +49,9 @@ displayToken= () => {
 }
 show = () => {
 
-    displayToken()
-    let log_form = document.getElementById("verify_code")
-    log_form.addEventListener("click", verifyCode)
+    showToken()
+    let checkForm = document.getElementById("check_ifsc")
+    checkForm.addEventListener("click",code_verify)
 
     
 }
