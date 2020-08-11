@@ -140,16 +140,16 @@ let myChart
                 let opt1 = document.createElement("option")
                 opt1.value = ""
                 opt1.textContent = "Choose..."
-                let fag = document.createDocumentFragment()
-                fag.append(opt1)
+                let flag = document.createDocumentFragment()
+                flag.append(opt1)
                 records.forEach((elem, index) => {
 
                     let opt = document.createElement("option")
                     opt.value = elem
                     opt.textContent = elem
-                    fag.append(opt)
+                    flag.append(opt)
                 })
-                target.append(fag)
+                target.append(flag)
             }
 
             function renderUpdate() {

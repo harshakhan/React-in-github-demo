@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
+        <link rel ="stylesheet" type ="text/css" href="file:///home/harsha/Downloads/fontawesome-free-5.13.1-web/css/all.css">
+        <style>
+            *{
+                font-family: 'Lemonada', cursive;
+                background-color: #212121;
+                color:white;
+            }
+            *>body{
+                background-color:#212121;
+
+            }
+        </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                
+                <p class="h2 m-3"><i class="fas fa-users"></i>  Student Marks Recorder</p>
+
+                <form id="submit_form">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i> <label for="studentName">Student Name </label> 
+                        <input type="text" class="form-control" id="studentName">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-poll"></i> <label for="marksEnglish">English Marks</label> 
+                        <input type="text" class="form-control" id="marksEnglish">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-poll"></i> <label for="marksScience">Science Marks</label> 
+                        <input type="text" class="form-control" id="marksScience">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-poll"></i> <label for="marksMaths">Maths Marks</label> 
+                        <input type="text" class="form-control" id="marksMaths">
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Add Data">
+                </form>
+
+            </div>
+
+            <div class="col-6">
+
+                
+                <button type="submit" class="btn btn-warning m-5" id="topStudent">Get Top Student</button>
+                <br>
+                <div class="container" id="display_top"></div>
+
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="form-group">
+                    <label for="inlineFormCustomSelectPref" class="m-1">Select Student</label>
+                    <select class="custom-select m-1" id="select_student">
+                        <option selected>Choose...</option>
+                    </select>
+                </div>
+
+                <div class="container" id="student_detail"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="user-marks.js"></script>
+</body>
+
+</html>
