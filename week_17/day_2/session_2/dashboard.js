@@ -12,8 +12,8 @@ async function code_verify(){
             <p class="h6" id="token">success</p>
         </div></div></div>
        <p class="h5 text-warning">Bank Details</p>
+       <p>Bank Name : ${info.BANK}</p>
         <p>Branch Name : ${info.BRANCH}</p>
-        <p>Bank Name : ${info.BANK}</p>
         <p>IFSC Code : ${info.IFSC}</p>
         <p>Address : ${info.ADDRESS}</p>
         <p>City : ${info.CITY}</p>
