@@ -72,14 +72,14 @@ handelSubmit = () => {
     }
 
 handleUpdate = () => {
-    let lbl = document.getElementById("select_student").value
+    let response = document.getElementById("select_student").value
     let target = document.getElementById("student_detail")
     for(let a = 0 ; a < studentData.length; a++){
-        if(lbl == studentData[a].studentName){
+        if(response == studentData[a].studentName){
             target.innerHTML = `<p>${studentData[a].studentName}</p>
                                 <p>English Marks = ${studentData[a].marks.english}<br>
-                                    Science Marks = ${studentData[a].marks.science}<br>
-                                    Mathematics Marks = ${studentData[a].marks.mathematics}</p>`
+                                Mathematics Marks = ${studentData[a].marks.mathematics}<br>
+                                    Science Marks = ${studentData[a].marks.science}</p>`
         }
     }
 }
@@ -91,10 +91,10 @@ topStudent = () => {
         
     target.innerHTML = `<p class="h4">${top.studentName}</p>
     <p>English Marks = ${top.marks.english}<br>
-    Science Marks = ${top.marks.science}<br>
-    Mathematics Marks = ${top.marks.mathematics}</p>`
+    Mathematics Marks = ${top.marks.mathematics}<br>
+    Science Marks = ${top.marks.science}</p>`
     }
-    else {target.innerHTML = `<p class="h1">No Data is Found</p>`}
+    else {target.innerHTML = `<p class="h3">No Data is Found</p>`}
     
 }
 add = () => {
