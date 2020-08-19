@@ -51,12 +51,13 @@ let myChart
                     if (Number(x[1]) > 100000 && Number(x[1]) < 200000) {
                         changeColor.push(`#C6FF00`)
                     }
-                    else if (Number(x[1]) > 150000) {
-                        changeColor.push(`#FF4081`)
-                    }
                     else if (Number(x[1]) <= 100000) {
                         changeColor.push(`#00B0FF`)
                     }
+                    else if (Number(x[1]) > 150000) {
+                        changeColor.push(`#FF4081`)
+                    }
+                    
                 })
             }
 
@@ -70,8 +71,8 @@ let myChart
                             label:"Sales in Rupees",
                             data: sold_data,
                             backgroundColor: changeColor,
-                            borderColor: "rgb(0, 0, 0)",
-                            borderWidth: 1,
+                           
+                            
                         }
                     ],
                 },
@@ -83,12 +84,14 @@ let myChart
                                 ticks: {
 
                                     beginAtZero: true,
+                                    fontColor:'white'
 
                                 },
                                 scaleLabel: {
                                     display: true,
                                     labelString: 'Rupees',
                                     fontSize: 20,
+                                    fontColor:'white'
                                 }
 
                             },
@@ -99,7 +102,8 @@ let myChart
                                 scaleLabel: {
                                     display: true,
                                     labelString: 'Date',
-                                    fontSize: 20,
+                                    fontSize: 30,
+                                    fontColor:'white'
                                 }
 
                             },
@@ -110,14 +114,16 @@ let myChart
                     title: {
                         display: true,
                         text: "SALES CHART",
-                        fontSize: 30
+                        fontSize: 50,
+                        fontColor:'white'
 
                     },
                     legend: {
                         position: 'top',
                         labels: {
-                            fontColor: '#000',
-                            backgroundColor: "#2348"
+                            fontColor: 'white',
+                            backgroundColor: "#2345"
+                            
                         }
                     },
 
@@ -134,7 +140,8 @@ let myChart
                     let x = new Date(elem.date); 
                     if (Number(base) == x.getDate()) {
                          value = index 
-                        } })
+                        } 
+                    })
                 data[value].sales = "₹" + sales_value
                 fetchData()
                 myChart.update();
