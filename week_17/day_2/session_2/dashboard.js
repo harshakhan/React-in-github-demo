@@ -25,18 +25,26 @@ async function code_verify(){
 
    }
     catch(error){
-        target.innerHTML = `<div class="col-8">
+        target.innerHTML = `<div class="col-10">
         <div class="alert alert-warning" role="alert">
             <p class="h3" id="token">Wrong Data</p>
         </div></div>`
     
     }
-}
+ }
     else {
        target.textContent = "IFSC Code Missing", 
        target.style.color="red"
     }
- }
+}
+show = () => {
+
+    showToken()
+    let checkForm = document.getElementById("check_ifsc")
+    checkForm.addEventListener("click",code_verify)
+
+    
+}
 
 showToken= () => {
     let token = document.getElementById("token")
@@ -47,12 +55,5 @@ showToken= () => {
     }
     
 }
-show = () => {
 
-    showToken()
-    let checkForm = document.getElementById("check_ifsc")
-    checkForm.addEventListener("click",code_verify)
-
-    
-}
 window.addEventListener("load", show)
