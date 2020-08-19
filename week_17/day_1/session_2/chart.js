@@ -127,12 +127,6 @@ let myChart
 
 
 
-            function inputUpdate() {
-                let index = Number(event.target.value)
-                let value
-                data.forEach(elem => { let x = new Date(elem.date); if (index == x.getDate()) { value = elem.sales.split("₹") } })
-                document.getElementById("sales_edit").value = value[1]
-            }
 
             function updateSelect() {
                 const target = document.getElementById("select")
@@ -151,7 +145,6 @@ let myChart
                 })
                 target.append(flag)
             }
-
             function renderUpdate() {
                 let base = document.getElementById("select").value
                 let sales_value = document.getElementById("sales_edit").value
@@ -160,6 +153,12 @@ let myChart
                 data[value].sales = "₹" + sales_value
                 fetchData()
                 myChart.update();
+            }
+            function inputUpdate() {
+                let index = Number(event.target.value)
+                let value
+                data.forEach(elem => { let x = new Date(elem.date); if (index == x.getDate()) { value = elem.sales.split("₹") } })
+                document.getElementById("sales_edit").value = value[1]
             }
 
             window.addEventListener("load", function () {

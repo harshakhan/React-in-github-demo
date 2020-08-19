@@ -19,3 +19,4 @@
 
     const avg = getAvg(mathematics,english,geography,science,accounts)
     console.log(avg)
+

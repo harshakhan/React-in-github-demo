@@ -1,8 +1,6 @@
 const convert = (p) => {
     var str = String(p)
     var dotStr = str.split('.')
-
-
     if(dotStr.length>1){
   
     var str2 = dotStr[1]
