@@ -79,7 +79,7 @@ handleUpdate = () => {
             target.innerHTML = `<p>${studentData[a].studentName}</p>
                                 <p>English Marks = ${studentData[a].marks.english}<br>
                                 Mathematics Marks = ${studentData[a].marks.mathematics}<br>
-                                    Science Marks = ${studentData[a].marks.science}</p>`
+                                Science Marks = ${studentData[a].marks.science}</p>`
         }
     }
 }
@@ -94,7 +94,9 @@ topStudent = () => {
     Mathematics Marks = ${top.marks.mathematics}<br>
     Science Marks = ${top.marks.science}</p>`
     }
-    else {target.innerHTML = `<p class="h3">No Data is Found</p>`}
+    else {
+        target.innerHTML = `<p class="h3">No Data is Found</p>`
+    }
     
 }
 add = () => {
