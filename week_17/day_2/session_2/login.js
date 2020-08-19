@@ -19,7 +19,7 @@ function handle_login(){
         'Content-Type': 'application/json'
       },
       body:  payload,
-    }).then(response => response.json())
+    }).then(res => res.json())
 
     .then(data=>{
       let params=new URLSearchParams(data)

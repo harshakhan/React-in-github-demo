@@ -94,8 +94,8 @@ td:nth-child(3n+1) {
 /* edit */
 
 button{
-    background-color:#FFB74D;
-    background-color:#FFB74D;
+    background-color:greenyellow;
+    background-color:greenyellow;
     border:hidden;
     padding: 15px;
     width:100px;

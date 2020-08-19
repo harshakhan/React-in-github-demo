@@ -130,7 +130,8 @@ let myChart
                 let base = document.getElementById("select").value
                 let sales_value = document.getElementById("sales_edit").value
                 let value
-                data.forEach((elem, index) => { let x = new Date(elem.date); 
+                data.forEach((elem, index) => { 
+                    let x = new Date(elem.date); 
                     if (Number(base) == x.getDate()) {
                          value = index 
                         } })
