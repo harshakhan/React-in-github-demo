@@ -9,14 +9,21 @@ class fetchData {
 
     }
 
-    fetchStudentData(studentName, marks_data) {
+    fetchStudentData(studentName, marksData) {
         this[this.length] = {
             id: this.length + 1,
             studentName: studentName,
-            marks: marks_data
+            marks: marksData
         }
         this.length++
         return (this.length)
+    }
+    fetchAverage(studentName) {
+        for (let a = 0; a < this.length; a++) {
+            if (this[a].studentName == studentName) {
+                return this[a]
+            }
+        }
     }
 
     getStudentDetails(studentName) {
@@ -27,13 +34,7 @@ class fetchData {
         }
     }
 
-    fetchAverage(studentName) {
-        for (let a = 0; a < this.length; a++) {
-            if (this[a].studentName == studentName) {
-                return this[a]
-            }
-        }
-    }
+ 
 
     fetchTopStudents() {
         let total = 0
@@ -50,7 +51,7 @@ class fetchData {
 
 
 
-let student_data
+let studentData
 
 handelSubmit = () => {
     event.preventDefault()
@@ -59,19 +60,32 @@ handelSubmit = () => {
     let marks_science = Number(document.getElementById("marksScience").value)
     let marks_math = Number(document.getElementById("marksMaths").value)
 
-        marks_data = {english:marks_eng,
+        marksData = {english:marks_eng,
                             science:marks_science,
                             mathematics:marks_math}
 
-        student_data.fetchStudentData(studentName, marks_data)
+        studentData.fetchStudentData(studentName, marksData)
 
         update_select_elemet()
-        console.log(studentName,marks_data)
-        console.log(student_data)
+        console.log(studentName,marksData)
+        console.log(studentData)
     }
 
+handleUpdate = () => {
+    let lbl = document.getElementById("select_student").value
+    let target = document.getElementById("student_detail")
+    for(let a = 0 ; a < studentData.length; a++){
+        if(lbl == studentData[a].studentName){
+            target.innerHTML = `<p>${studentData[a].studentName}</p>
+                                <p>English Marks = ${studentData[a].marks.english}<br>
+                                    Science Marks = ${studentData[a].marks.science}<br>
+                                    Mathematics Marks = ${studentData[a].marks.mathematics}</p>`
+        }
+    }
+}
+
 topStudent = () => {
-    let top = student_data.fetchTopStudents()
+    let top = studentData.fetchTopStudents()
     let target = document.getElementById("top_student")
     if(top != null){
         
@@ -83,41 +97,8 @@ topStudent = () => {
     else {target.innerHTML = `<p class="h1">No Data is Found</p>`}
     
 }
-
-handleUpdate = () => {
-    let lbl = document.getElementById("select_student").value
-    let target = document.getElementById("student_detail")
-    for(let a = 0 ; a < student_data.length; a++){
-        if(lbl == student_data[a].studentName){
-            target.innerHTML = `<p>${student_data[a].studentName}</p>
-                                <p>English Marks = ${student_data[a].marks.english}<br>
-                                    Science Marks = ${student_data[a].marks.science}<br>
-                                    Mathematics Marks = ${student_data[a].marks.mathematics}</p>`
-        }
-    }
-}
-
-update_select_elemet = () => {
-    const target = document.getElementById("select_student")
-    target.innerHTML = ""
-    let opt1 = document.createElement("option")
-    opt1.value = ""
-    opt1.textContent = "Choose..."
-    let fag = document.createDocumentFragment()
-    fag.append(opt1)
-    for(let a = 0 ; a < student_data.length; a++){
-        let opt = document.createElement("option")
-        opt.value = student_data[a].studentName
-        opt.textContent = student_data[a].studentName
-        fag.append(opt)
-    }
-    target.append(fag)
-}
-
-
-
 add = () => {
-    student_data = new fetchData()
+    studentData = new fetchData()
 
     let submit = document.getElementById("submit_form")
     submit.addEventListener("submit", handelSubmit)
@@ -130,6 +111,22 @@ add = () => {
     let select_student = document.getElementById("select_student")
     select_student.addEventListener("change",handleUpdate)
 
+}
+update_select_elemet = () => {
+    const target = document.getElementById("select_student")
+    target.innerHTML = ""
+    let opt1 = document.createElement("option")
+    opt1.value = ""
+    opt1.textContent = "Choose"
+    let res = document.createDocumentFragment()
+    res.append(opt1)
+    for(let a = 0 ; a < studentData.length; a++){
+        let opt = document.createElement("option")
+        opt.value = studentData[a].studentName
+        opt.textContent = studentData[a].studentName
+        res.append(opt)
+    }
+    target.append(res)
 }
 
 window.addEventListener("DOMContentLoaded", add)
