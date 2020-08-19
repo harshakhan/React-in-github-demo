@@ -67,7 +67,7 @@ let myChart
                     labels: records,
                     datasets: [
                         {
-                            label: "Sales in Rupees",
+                            label:"Sales in Rupees",
                             data: sold_data,
                             backgroundColor: changeColor,
                             borderColor: "rgb(0, 0, 0)",
@@ -126,14 +126,22 @@ let myChart
             };
 
 
-
+            function renderUpdate() {
+                let base = document.getElementById("select").value
+                let sales_value = document.getElementById("sales_edit").value
+                let value
+                data.forEach((elem, index) => { let x = new Date(elem.date); if (Number(base) == x.getDate()) { value = index } })
+                data[value].sales = "₹" + sales_value
+                fetchData()
+                myChart.update();
+            }
 
             function updateSelect() {
                 const target = document.getElementById("select")
                 target.innerHTML = ""
                 let opt1 = document.createElement("option")
                 opt1.value = ""
-                opt1.textContent = "Choose..."
+                opt1.textContent = "Choose"
                 let flag = document.createDocumentFragment()
                 flag.append(opt1)
                 records.forEach((elem, index) => {
@@ -145,15 +153,7 @@ let myChart
                 })
                 target.append(flag)
             }
-            function renderUpdate() {
-                let base = document.getElementById("select").value
-                let sales_value = document.getElementById("sales_edit").value
-                let value
-                data.forEach((elem, index) => { let x = new Date(elem.date); if (Number(base) == x.getDate()) { value = index } })
-                data[value].sales = "₹" + sales_value
-                fetchData()
-                myChart.update();
-            }
+         
             function inputUpdate() {
                 let index = Number(event.target.value)
                 let value

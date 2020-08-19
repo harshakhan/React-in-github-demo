@@ -20,7 +20,7 @@
 // //We can make it even smaller
 
 // function sum(x,y){
-//     return x+ y
+//     return x+y
 // }
 
 // const shortSum = (x,y) => x+y  // here we can avoid curley bracket and return statement also

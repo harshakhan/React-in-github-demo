@@ -33,7 +33,7 @@
 
 // const input = ' 9\n1 2 3 4 5 6 7 8 9'
 
-// let [ size, values] = input .split('\n')
+// let [ size, values] = input.split('\n')
 
 // values = values.split(' ').map((item)=> Number(item)*Number(item))
 
@@ -59,7 +59,7 @@
 // console.log(out)  // [ 6, 4, 6 ]
 
 
-// so above expression can be shortned by the above expression----------------------
+// so above expression can be shortned by the below expression----------------------
 
 // const arr = ['Nurpul', 'Aman' , 'Albert']
 
@@ -75,7 +75,7 @@
 
 //------------------------------------------------------------------------------------------
 // square each number
-// filter out , >25,  divisible by 4
+// filter out , >25,  divisible by 5
 //sum
 
 
@@ -113,7 +113,7 @@
 
 //-----------------------------------------------------------------------------------------
 
-// converting string into 2d array
+// // converting string into 2d array
 
 // const input = `1 2 3 4 5 6
 //  7 8 9 10 
@@ -163,7 +163,7 @@
 
 var arr = [1,2,3,4]
 
-for(var i=0;i<arr.length; i++){
+for(var i=0;i<arr.length;i++){
     display.call(arr,i)
 }
 
