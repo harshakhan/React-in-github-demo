@@ -1,0 +1,11 @@
+.header{
+    background: teal;
+    color:white;
+    text-align: center;
+    width: 140px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 28px;
+    height:30px;
+
+}

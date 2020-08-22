@@ -1,0 +1,10 @@
+.header{
+    color : greenyellow;
+    background: grey;
+    text-align: center;
+    width:140px;
+    padding: 10px;
+    border-radius: 29px;
+    border: 2px solid greenyellow;
+    height:30px;
+}

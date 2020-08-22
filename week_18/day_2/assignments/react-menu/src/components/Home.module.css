@@ -1,0 +1,10 @@
+.header{
+    background: cornflowerblue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid white;
+    width: 140px;
+    border-radius: 28px;
+    height:30px;
+}

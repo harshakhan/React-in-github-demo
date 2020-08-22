@@ -1,0 +1,8 @@
+.App {
+  display:flex;
+  margin: 20px;
+}
+.App> *{
+  margin: 30px;
+}
+
