@@ -1,0 +1,28 @@
+.buttonContainer{
+    padding: 10px;
+    border : 1px solid #80DEEA;
+    border-radius: 5px;
+    color: #82B1FF;
+    margin: 5px;
+
+}
+
+.buttonContainer :hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.active{
+    color: black;
+    background-color: #82B1FF;
+}
+
+.skillsContainer{
+    padding: 5px;
+    border : 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin : 5px;
+    font-size: 12px;
+
+}
