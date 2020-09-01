@@ -8,14 +8,14 @@ import DisplayCard from "./components/ProblemSolving/display-card"
 function App() {
   return (
     <div className="App">
-      {/* <Event/>
+      <Event/>
       <br/>
       <hr/>
      <Todo/>
      <br/>
      <hr/>
      <Display/>
-     <hr/> */}
+     <hr/>
      <DisplayCard/>
     </div>
     

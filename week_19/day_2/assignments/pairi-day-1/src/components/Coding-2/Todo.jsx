@@ -14,7 +14,7 @@ export default class Todo extends Component{
         this.setState({value: value})
 
     }
-    addList= () =>{
+    addList=() =>{
         const {value,tasks} = this.state
         this.setState({
             tasks : [...tasks, value]
