@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Re, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+   
+    <div id ="root">
+
+    </div>
+    <button id ="btn"> ADD </button>
+    <button id ="btn-reduce"> REDUCE </button>
+   
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>  
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script type = "text/babel">
+
+    // const root = document.getElementById('root')
+    //     const elem = <div id="with jsx">Welcome</div>
+    //     const input = <input placeholder="fill this box with Jsx"/>
+    //     const elem1 = React.createElement('input',{id:"abc",placeholder:"fill this without jsx"})
+
+    //     ReactDOM.render(input,root)
+
+    // ------------------------------------------------------------------------------------------
+        // Standard practice of wighting in the react
+
+    // const root = document.getElementById('root')
+    //     function App(){
+    //         return <div> Hello World </div>
+    //     }
+    //     console.log(App)
+
+    //     ReactDOM.render(<App/>,root)
+
+    //---------------------------------------------------------------------------------
+        // working with probs to get an ids --------
+
+    // const root = document.getElementById('root')
+    //     function App(props){
+    //         const{id,name} = props
+    //         return <div id={id}> Hello { name || "World"} 
+    //             {props.children}
+    //             </div>
+    //     }
+    //     console.log(App)
+
+    //     ReactDOM.render(<App name = "Harsha" id ="abc"><div> hey </div></App>,root)
+
+
+    // ---------------------------------------------------------------------------
+
+    // another example---
+
+    // const root = document.getElementById('root')
+    //     function App(props){
+    //         const{id,name} = props
+    //         return <div id={id}> Hello { name || "World"} 
+    //             {props.children}
+    //             </div>
+    //     }
+    //     function clock(){
+    //         ReactDOM.render(<div>{new Date().toLocaleTimeString()}</div>,root)
+    //     }
+    //     setInterval(clock,1000)
+
+    // -------------------------------------------------------------------------------------
+
+    // // with the button click increment  example ------
+    // const root = document.getElementById('root')
+    // function App(props){
+    //     console.log(props)
+    //     const {id,name} = props
+    //     return <div id ={id}> Hello{name || "World"}</div>
+    // }
+    // let value = 0 
+
+    // function Value(props){
+    //     return <h3>{props.value}</h3>
+    // }
+
+    // function render(){
+    //     ReactDOM.render(<div> Value is :{value++} </div>, root)
+    // }
+
+    // render()
+
+    // let btn = document.getElementById('btn')
+    // btn.addEventListener('click',render)
+
+
+    //--------------------------------------------------------------------------------------
+
+    // On button click increment and decrement btn -------
+
+
+     
+    const root = document.getElementById('root')
+    function App(props){
+        console.log(props)
+        const {id,name} = props
+        return <div id ={id}> Hello{name || "World"}</div>
+    }
+    let value = 0 
+
+    function Value(props){
+        return <h3>{props.value}</h3>
+    }
+
+    function render(value){
+        ReactDOM.render(<Value value={value} />, root)
+    }
+
+    render(value)
+
+    let btn = document.getElementById('btn')
+        btn.addEventListener('click',()=>render(++value))
+
+    let reduce = document.getElementById('btn-reduce')
+        reduce.addEventListener('click',()=>render(--value))
+
+
+
+
+       
+    </script>
+    
+</body>
+</html>

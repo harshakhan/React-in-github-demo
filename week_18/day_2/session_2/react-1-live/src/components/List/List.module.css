@@ -1,0 +1,17 @@
+/* .header{
+    background: tomato;
+} */
+/* 
+-------------------------------- */
+
+.main{
+    background: tomato
+}
+
+.main>h3{
+    border: 1px solid black
+}
+.main li{
+    font-size: 20px;
+    font-weight: 700;
+}

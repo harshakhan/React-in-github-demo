@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Re, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+   
+    <div id ="root">
+
+    </div>
+    <button>ADD</button>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>  
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script type = "text/babel">
+    // // React.createElement(type,props,...children)
+    // // ReactDOM.render(element, container)
+
+    // const li1 = React.createElement('li',{},'list item 1')
+    // const li2 = React.createElement('li',{},'list item 2')
+    // const li3 = React.createElement('li',{},'list item 3')
+
+    // const elem = React.createElement(
+    //     'ul',
+    // {
+    //     name:'firstname',
+    //     id:'001',
+    //     custom:'value'
+    // },
+    // 'Harsha',li1,li2,li3
+    // )
+    // console.log(elem)
+
+    // ReactDOM.render(elem,root)
+
+    // // const elem =<div id ="001" custom ="value">Masai{name}{10+50}</div>
+
+    //--------------------------------------------------------------------------
+
+    // function UserData(user){
+    //    return `Username: ${user.name}
+    //            Age: ${user.age}
+    //            Birthday: ${user.dob}`
+    // }
+    // const user = {
+    //     name: "Masai School",
+    //     age: 1,
+    //     dob: "10/3/2019"
+    // }
+    // const elem=(
+    //     <div>
+    //         <h1>Profile</h1>
+    //         <p>
+    //             {UserData(user)}
+    //         </p>
+    //     </div>
+
+    // )
+    // ReactDOM.render(elem,root)
+
+
+    //--------------------------------------------------------------------------
+        // If there is no user.name example.
+
+
+    // function UserData(user){
+    //    return `Username: ${user.name}
+    //            Age: ${user.age}
+    //            Birthday: ${user.dob}`
+    // }
+    // // const user = {
+    // //     name: "Masai School",
+    // //     age: 1,
+    // //     dob: "10/3/2019"
+    // // }
+
+    // const user= null
+
+    // function UserGreeting(user){
+    //     if(user){
+    //         return <h1>Hello {user.name}</h1>
+    //     }
+    //     else{
+    //         return <h1>Hello, Stranger </h1>
+    //     }
+    // }
+
+    // const elem = UserGreeting(user)
+    // ReactDOM.render(elem,root)
+
+
+    //-----------------------------------------------------------------------
+
+    // creating the timer--
+
+    // const root = document.getElementById('root')
+
+    // function tick(){
+    //     const elem =(
+    //         <div>
+    //             <h1>Clock!</h1>
+    //             <h2>It is {new Date().toLocaleTimeString()}</h2>
+    //             <h9>Keep Working Hard</h9>
+    //         </div>
+    //     )
+    //     ReactDOM.render(elem,root)
+    // }
+
+    // setInterval(tick,1000)
+    
+    //--------------------------------------------------------------------------
+
+    // button function ----
+
+    const root = document.getElementById('root')
+
+    function counter(count){
+        const element =(
+            <div>
+                <h1> Counter </h1>
+                <p> You have clicked on the button {count} times </p>
+            </div>
+        )
+
+        ReactDOM.render(element,root)
+    }
+    let count = 0
+    document.querySelector('button').addEventListener('click',function (){
+        count++
+        counter(count)
+    })
+
+    counter(count)
+    </script>
+    
+</body>
+</html>

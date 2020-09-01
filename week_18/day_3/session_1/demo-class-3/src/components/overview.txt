@@ -1,0 +1,11 @@
+components
+
+1.functional components - we will not able to manage the state.
+2.class beased components - here we are extending some property from react based components.
+                            * we know how to pass props into these components
+                            * we  are able to manage the state inside with this.state, this.setState
+                            * events like onClick, and update some values
+                            * we have also learn some property on this.setState also
+
+
+this.setState() - It is a function you can pass  an object
