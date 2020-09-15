@@ -41,7 +41,7 @@ class TableItem extends React.Component {
 
     return (
       <>
-        <div style={{ border: "1px solid  black", margin: "20px" }}>
+        <div style={{ border: "1px solid  black", margin: "20px" ,padding:"10px"}}>
           <div style={{ display: "flex", flex: "1" }}>
             <div style={{ flex: "1" }}>
               <p>Title</p>

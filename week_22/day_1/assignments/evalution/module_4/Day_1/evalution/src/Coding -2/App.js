@@ -1,5 +1,5 @@
 import React from 'react';
-import FormWrapper from "./Components/FormWrapper";
+import FormWrapper from "./Component/FormWrapper";
 
 import './App.css';
 
