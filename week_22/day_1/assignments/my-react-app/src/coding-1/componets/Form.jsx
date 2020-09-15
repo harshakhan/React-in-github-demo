@@ -80,13 +80,13 @@ export default class Form extends React.Component {
   };
 
   handleLogin = () => {
-    // console.log("dfgdf");
+    console.log("dfgdf");
     this.setState({
       isLogin: true
     });
   };
   handleRegistr = () => {
-    // console.log("dfgdf");
+    console.log("dfgdf");
     this.setState({
       isLogin: false
     });
