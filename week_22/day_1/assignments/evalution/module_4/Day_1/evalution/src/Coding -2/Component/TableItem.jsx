@@ -11,11 +11,6 @@ class TableItem extends React.Component {
     };
   }
 
-  // toggleEdit = () => {
-  //   this.setState({
-  //     isEdit: !this.state.isEdit
-  //   });
-  // };
 
   handleEdit = (e) => {
     let { name, value: val, type, checked } = e.target;
@@ -41,39 +36,8 @@ class TableItem extends React.Component {
       location,
       salary,
       remote
-      // handleDelete
+     
     } = this.props;
-
-    // const { isEdit, value } = this.state;
-
-    // if (isEdit) {
-    //   return (
-    //     <>
-    //       <div style={{ display: "flex", flex: "1" }}>
-    //         <input
-    //           onChange={this.handleEdit}
-    //           style={{ flex: "1" }}
-    //           name="name"
-    //         ></input>
-    //         <input
-    //           onChange={this.handleEdit}
-    //           style={{ flex: "1" }}
-    //           name="date"
-    //         ></input>
-    //         <input onChange={this.handleEdit} style={{ flex: "1" }}></input>
-    //         <div style={{ flex: "1" }}>{location}</div>
-    //         <div style={{ flex: "1" }}>{salary}</div>
-    //         <div style={{ flex: "1" }}>{remote ? "Yes" : "No"}</div>
-    //         <button onClick={this.handleUpdate} style={{ flex: "1" }}>
-    //           Update
-    //         </button>
-    //         <button onClick={this.toggleEdit} style={{ flex: "1" }}>
-    //           Cancel
-    //         </button>
-    //       </div>
-    //     </>
-    //   );
-    // }
 
     return (
       <>
@@ -103,12 +67,7 @@ class TableItem extends React.Component {
               <p>Remote</p>
               <div className ={remote ? styles.green : styles.red}></div>
             </div>
-            {/* <button onClick={handleDelete} style={{ flex: "1" }}>
-            DELETE
-          </button> */}
-            {/* <button onClick={() => this.toggleEdit()} style={{ flex: "1" }}>
-            EDIT
-          </button> */}
+           
           </div>
         </div>
       </>
