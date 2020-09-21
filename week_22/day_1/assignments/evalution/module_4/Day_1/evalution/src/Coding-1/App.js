@@ -1,15 +1,15 @@
-// import React from 'react';
+import React from 'react';
 
 // import './App.css';
-// import LandingPage from "./Component/LandingPage";
+import LandingPage from "./Component/LandingPage";
 
 
-// function App() {
-//   return (
-//     <div className="App">
-//        <LandingPage />
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div className="App">
+       <LandingPage />
+    </div>
+  );
+}
 
-// export default App;
+export default App;

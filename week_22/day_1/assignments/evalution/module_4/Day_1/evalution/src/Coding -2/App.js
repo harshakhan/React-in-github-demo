@@ -1,15 +1,15 @@
-import React from 'react';
-import FormWrapper from "./Component/FormWrapper";
+// import React from 'react';
+// import FormWrapper from "./Component/FormWrapper";
 
 
 
 
-function App() {
-  return (
-    <div className="App">
-       <FormWrapper />
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div className="App">
+//        <FormWrapper />
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;

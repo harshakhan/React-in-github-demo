@@ -96,7 +96,7 @@ export default class Form extends React.Component {
 
     return (
       <>
-        <h1>Enter Deatails</h1>
+        <h1>Enter Details</h1>
         <Card>
           <Button
             style={{
