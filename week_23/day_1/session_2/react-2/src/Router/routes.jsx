@@ -12,4 +12,4 @@ function Routes(){
         </>
     )
 }
-export { Routes}
+export { Routes }
