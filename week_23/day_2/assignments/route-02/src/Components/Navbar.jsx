@@ -30,7 +30,7 @@ function Navbar(){
                 }}>
 
                     {links.map (({to,title})=>(
-                <Link   key = {to} style={{padding:10}} to ={to}>
+                <Link key = {to} style={{padding:10}} to ={to}>
                     {title}
                 </Link> 
             ))}
