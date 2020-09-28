@@ -1,11 +1,19 @@
 body{
-  background-color: #9266ff;
+  background: #B2FEFA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .App{
-  background-color: #3f3160;
+  background: #41295a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   min-height: 500px;
   width: 400px;
   margin: 40px auto;
+  border-radius: 10px;
+  overflow: hidden;
 
 
 }
@@ -31,10 +39,17 @@ body{
   width:88px;
   border-radius: 5px;
   border: 0;
-  background-color: rgba(202,156,24);
+  background-color: #AA00FF;
   cursor: pointer;
   font-weight: bolder;
   color:white;
   outline: none;
+  font-size: 16px;
 
+}
+
+#to-do-form h1{
+  color: white;
+  margin-left: 30%;
+  padding: 10px;
 }

@@ -73,6 +73,7 @@ class Todo extends React.Component{
 
           <header>
               <form id="to-do-form" onSubmit={this.addItem}>
+                  <h1> Todo List</h1>
                   <input type="text" placeholder="Enter Text" 
                   value={this.state.currentItems.text}
                   onChange={this.handleInput}/>
