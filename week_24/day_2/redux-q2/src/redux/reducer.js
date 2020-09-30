@@ -11,14 +11,14 @@ const reducer = (state = initState,action) => {
       console.log("increasing", state.value);
       return {
         ...state,
-        counter: Number(state.counter) + Number(action.payload)
+        counter:(state.counter) + Number(action.payload)
 
       };
       case DECREMENT:
         console.log("decreasing",state.value);
         return {
           ...state,
-          counter: Number(state.counter) - Number(action.payload)
+          counter: (state.counter) - Number(action.payload)
         };
       case MULTIPLY:
         console.log("multiplying",state.value);
