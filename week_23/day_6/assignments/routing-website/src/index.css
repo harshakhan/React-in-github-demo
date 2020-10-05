@@ -95,7 +95,7 @@ img{
 .header-img img{
   height: 60vh;
 }
-#header .animated {
+/* #header .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
@@ -114,4 +114,4 @@ img{
   100% {
     transform: translateY(-10px);
   }
-}
+} */

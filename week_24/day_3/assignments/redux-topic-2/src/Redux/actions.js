@@ -1,4 +1,4 @@
-import {ADD_COUNTER,REDUCE_COUNTER,ADD_TODO,DELETE_TODO} from "./actionTypes";
+import {ADD_COUNTER,REDUCE_COUNTER,ADD_TODO,DELETE_TODO, TOGGLE_TODO, COMPLETED_TASK} from "./actionTypes";
 
   import { v4 as uuid } from "uuid";
   
@@ -25,4 +25,12 @@ import {ADD_COUNTER,REDUCE_COUNTER,ADD_TODO,DELETE_TODO} from "./actionTypes";
     type: DELETE_TODO,
     payload
   });
+  export const toggleStatus = (payload) => ({
+    type: TOGGLE_TODO,
+    payload
+  });
+  export const filterTask =(payload) => ({
+    type:COMPLETED_TASK,
+    payload
+  })
   

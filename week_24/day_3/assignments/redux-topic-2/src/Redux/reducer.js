@@ -1,4 +1,4 @@
-import { ADD_COUNTER, ADD_TODO, REDUCE_COUNTER,DELETE_TODO} from "./actionTypes";
+import { ADD_COUNTER, ADD_TODO, REDUCE_COUNTER,DELETE_TODO,TOGGLE_TODO, COMPLETED_TASK} from "./actionTypes";
 
 
 export const initState ={
@@ -29,6 +29,20 @@ export default (state = initState, {type,payload}) => {
                   ...state,
                   todo: state.todo.filter((item) => item.id !== payload)
                 };
+        case TOGGLE_TODO:
+            let newTodo = state.todo.find(item => item.id === payload)
+            console.log(newTodo)
+            newTodo.status = !newTodo.status
+            return {
+                ...state,
+                todo: [...state.todo]
+            };
+        // case COMPLETED_TASK:
+        //     let newStatus = state.todo.filter(item => item.id === action.payload?item.status=true:item)
+        //     return{
+        //         ...state,
+        //         todo:newStatus
+        //     }
 
             default:
                 return state
