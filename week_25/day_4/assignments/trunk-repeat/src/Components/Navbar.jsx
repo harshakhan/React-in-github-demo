@@ -21,7 +21,8 @@ function NavBar(props) {
         </ul>
       </div>
     </>
-  ) : (
+  ) 
+  : (
     <>
       <div id={Styles.nav}>
         <ul>

@@ -1,0 +1,45 @@
+*>body{
+    background-color: #212121;
+}
+.card{
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10%;
+    text-align: center;
+    background-color: goldenrod;
+    line-height: 1.4;
+    padding: 1rem;
+}
+input{
+    max-width: 100%;
+    font-size:2em;
+    border: 0;
+    padding:0.5em;
+    box-shadow: 0 2px 6px rgba(0,-0,-0,-0.3);
+
+}
+
+.todo {
+    display: flex;
+    text-align: left;
+    margin-bottom: 1rem;
+    background-color: #BDBDBD;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+}
+
+ a {
+    margin-left:auto;
+    text-decoration:none;
+    padding: 3px;
+    font-weight: bold;
+    opacity: 0.5;
+   
+}
+
+a:hover {
+    opacity: 1;
+    color: red;
+}

@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
     return (
       <>
         <div className={Style.github_searchbox}>
-          <h1 style={{color:'white'}}>Search GitHub User</h1>
+          <h1 style={{color:'white'}}>GitHub User Search</h1>
           <input
             type="text"
             value={this.state.value}
