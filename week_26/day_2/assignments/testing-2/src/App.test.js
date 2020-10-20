@@ -19,7 +19,7 @@ it("should have add and reduce buttons", ()=> {
   expect(reduce).toHaveTextContent('REDUCE')
 })
 
-it("should have an element with counter value as default ( 0 )", () => {
+it("should have an element with counter value as default 0", () => {
   const { getByTestId } = render(<App/>)
   const counter = getByTestId("counter")
   expect(counter).toHaveTextContent('0')

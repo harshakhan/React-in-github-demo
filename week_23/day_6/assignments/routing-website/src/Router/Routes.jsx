@@ -4,8 +4,8 @@ import "../../node_modules/bootstrap/dist/js/bootstrap.bundle"
 import { Route, Switch } from "react-router-dom"
 import { Home } from "./Home"
 import {About} from"./About"
-import {Service} from "./Service"
-import {Contact} from "./Contact"
+import {Login} from "./Login"
+import {Register} from "./Register"
 import { Navbar } from "../Components/Navbar"
 
 const Routes =() => {
@@ -15,8 +15,8 @@ const Routes =() => {
             <Switch>
             <Route path="/" exact render={() => <Home />} />
             <Route path="/about" render={() => <About />} />
-            <Route path="/service" render={() => <Service />} />
-            <Route path="/contact" render={() => <Contact/>} />
+            <Route path="/login" render={() => <Login />} />
+            <Route path="/register" render={() => <Register/>} />
 
             </Switch>
         </>
