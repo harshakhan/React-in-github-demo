@@ -1,9 +1,7 @@
 const express = require("express");
-
 const app = express();
 
 app.use(express.json());
-
 let users = [
   {
     username: "ram",
@@ -24,7 +22,7 @@ app.post("/adduser", (req, res) => {
     age: req.query.age,
   };
   users.push(newUser);
-  res.status(200).json({ message: "Successfully User is Added" });
+  res.status(201).json({ message: "Successfully User is Added" });
   const check = users.filter((item) => item.email === email);
   if (check) {
     res.status(400).json({ message: "Above user is already exists" });

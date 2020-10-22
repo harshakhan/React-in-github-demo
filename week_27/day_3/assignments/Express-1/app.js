@@ -4,7 +4,7 @@ const app = express();
 app.get('/',(req,res) =>{
     res.setHeader('Content-Type', 'text/html');
     res.writeHead(200);
-    res.write(`<html><h1>Welcome to Masai!</h1></html>`);
+    res.write(`<html><title>Masai Testing</title><h1>Welcome to Masai!</h1></html>`);
     res.end();
 })
 app.get('/home',(req,res) =>{
