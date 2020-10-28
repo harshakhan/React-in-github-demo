@@ -1,7 +1,11 @@
 const express = require('express');
-const app = express();
+const {middleware_1,middleware_2} = require("./middleware");
 
-app.get('/',(req,res) =>{
+
+const app = express();
+app.use(middleware_1,middleware_2)
+
+app.get('/',(req,res) => {
     res.setHeader('Content-Type', 'text/html');
     res.writeHead(200);
     res.write(`<html><title>Masai Testing</title><h1>Welcome to Masai</h1></html>`);
@@ -15,7 +19,7 @@ app.get('/about', (req,res) => {
     res.write(`<html><title>Masai Testing</title><h1>About me</h1></html>`);
     res.end()
 })
-app.get('/faq',(req,res) =>{
+app.get('/faq',(req,res) => {
     res.setHeader('Content-Type', 'text/html');
     res.writeHead(200);
     res.write(`<html><title>Masai Testing</title><h1>Faq</h1></html>`);
