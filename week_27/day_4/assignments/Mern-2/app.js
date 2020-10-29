@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res
   .status(200)
   .set("Content-Type", "text/plain")
-  .send("Welcome home")
+  .send("Welcome Home")
   .end();
 });
 
